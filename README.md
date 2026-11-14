@@ -98,9 +98,16 @@
 4. (선택) 주소 좌표 조회는 `local.properties`의 `kakao.rest.api.key`가 있을 때만 켜집니다. 없으면 꺼진 상태로 동작합니다. 키는 저장소에 넣지 마세요.
 
 ### Release 서명 (직접 해야 하는 절차)
-서명 키와 비밀번호는 저장소에 없습니다. 키 파일은 저장소 밖(`E:\Keys\hwith-release.jks`, alias `hwith`)에 두고, 비밀번호는 파일이나 Gradle 명령행 인자에 저장하지 않습니다.
-`tools/build-release.ps1`이 실행할 때 비밀번호를 입력받아(화면에 표시되지 않음) 빌드하는 동안만 환경변수(`HWITH_STORE_PASSWORD`, `HWITH_KEY_PASSWORD`)로 Gradle에 전달하고, 끝나면 지웁니다. 비밀번호 환경변수가 없으면 서명 없이 빌드됩니다.
-키가 아직 없다면 저장소 밖 경로에 `keytool -genkeypair -v -keystore E:\Keys\hwith-release.jks -alias hwith -keyalg RSA -keysize 2048 -validity 10000`로 직접 만드세요.
+서명 키와 비밀번호는 저장소에 없습니다. 서명 정보는 환경변수로만 Gradle에 전달합니다(`automotive/build.gradle.kts`).
+- `HWITH_STORE_PASSWORD`: 키스토어 비밀번호. 이 값이 없으면 서명 없이 빌드됩니다.
+- `HWITH_KEY_PASSWORD`: 키 비밀번호(선택). 없으면 키스토어 비밀번호를 씁니다.
+- `HWITH_STORE_FILE`, `HWITH_KEY_ALIAS`: 키스토어 파일 경로와 키 alias(선택). 주지 않으면 기본값 `E:\Keys\hwith-release.jks`, `hwith`를 씁니다. 이 Windows 경로는 기본값일 뿐이며, 다른 환경에서는 두 변수로 지정합니다.
+
+키 파일은 저장소 밖에 두고, 비밀번호는 파일이나 Gradle 명령행 인자에 저장하지 않습니다.
+`tools/build-release.ps1`(Windows PowerShell용)은 실행할 때 비밀번호를 입력받아(화면에 표시되지 않음) 빌드하는 동안만 환경변수로 Gradle에 전달하고, 끝나면 지웁니다.
+
+제출한 APK는 저장소 밖에 보관하는 팀 release 키로 서명했습니다. **이전에 제출했던 APK와 서명 키가 다릅니다.** 이전 APK가 설치된 기기에서는 덮어 설치(`adb install -r`)가 되지 않으므로, 먼저 `adb uninstall com.autoresolve`로 제거한 뒤 설치해 주세요(앱에 저장된 차량 등록·시연 접수·시연 예약 데이터는 지워집니다).
+키가 아직 없다면 저장소 밖 경로에 `keytool -genkeypair -v -keystore <키스토어 경로> -alias <alias> -keyalg RSA -keysize 2048 -validity 10000`로 직접 만드세요.
 
 ### Release 빌드
 
@@ -117,8 +124,7 @@
 시연 Release는 심사 때 기능을 보여 주기 위한 빌드이며, 실제 서비스가 아닙니다.
 - 서비스센터 A~E, 위치, 대기시간은 가상 데이터이고 센터에는 좌표가 없어 길안내를 막습니다. 정비 접수는 이 기기에만 저장되며 실제 센터로 전송되지 않습니다.
 - 시승 예약은 실제 예약이 아니라 이 기기에만 저장되는 시연 예약입니다. 이름은 "시연"으로 시작하고 연락처는 `010-0000-0000` 형식의 가상 정보만 허용하며, 실제 개인정보는 입력할 수 없습니다. 시승 예약 화면의 입력은 정차 확인이 아니라 사용자의 선언에 따릅니다(차량 정차 여부는 확인하지 못함). 실제 차량 운행 중에는 사용하지 마세요.
-- 제출한 APK(`apk/MIRAE_H.WITH_release.apk`)는 `dealers.json`에 좌표를 넣기 전에 빌드한 것이라 시승 매장 좌표가 없습니다. 그 APK에서는 시승 매장의 좌표 기반 길안내(NaviHelper 경로 요청)가 되지 않습니다.
-- 현재 소스로 다시 빌드하면 `dealers.json`의 좌표가 포함되어 Release에서도 시승 매장 경로 요청이 가능해지지만, 그렇게 빌드한 Release는 확인하지 않았습니다.
+- 제출한 APK(`apk/MIRAE_H.WITH_release.apk`)에는 `dealers.json`의 시승 매장 좌표 10곳이 들어 있습니다(APK 안의 파일로 확인). 다만 Release에서 "매장까지 길안내 시작"을 눌러 실제로 경로 요청이 되는지는 확인하지 않았습니다.
 - 운전 데이터는 실제 차량 값이 아니라 시연용 주행 프로필입니다.
 - 시연 모드가 꺼진 일반 Release에서는 시승 예약 작성과 시연 예약 내역이 나타나지 않습니다.
 - Release는 R8 최적화가 켜져 있습니다(코틀린 stdlib은 최적화 대상에서 제외). 초기에 R8 때문에 앱 시작 직후 종료되는 문제가 있었고 수정 후 홈 화면 실행까지 확인했습니다. 그 외 기능의 R8 호환은 아래 검증 상태의 확인 범위만 확인했습니다.
@@ -143,24 +149,24 @@
 | Debug 빌드의 에뮬레이터 동작 (음성 상담, 안전 분류, 시연 접수 등) | 개발자 테스트로 확인 |
 | Gleo ADB 검증 | 확인 |
 | 실제 Gleo 음성 비서 경유 검증 | 확인된 기록 없음 |
-| Release 빌드 (`-PhwithDemoRelease=true`) | 확인 (BUILD SUCCESSFUL, `DEMO_MODE=true`) |
-| Release APK 서명 | 확인 (apksigner v2 검증 성공) |
-| Release APK 설치 (Pleos Connect v2.1.0 에뮬레이터) | 확인 (`adb install -r` 성공) |
-| Release 앱 실행, 홈 화면 표시 | 확인 (R8로 인한 시작 직후 종료 문제는 수정 후 해결 확인) |
-| Release의 시승 시연 예약 저장, 저장된 시연 예약 내역 조회 | 확인 |
+| Release 빌드 (`-PhwithDemoRelease=true`) | 확인 (2026-11-14 다시 빌드, BUILD SUCCESSFUL, `DEMO_MODE=true`, R8 켜짐) |
+| Release APK 서명 | 확인 (2026-11-14 빌드, apksigner v2 검증 성공) |
+| Release APK 설치 (Pleos Connect v2.1.0 에뮬레이터) | 확인 (2026-11-14 빌드, `adb uninstall com.autoresolve` 후 `adb install` 성공. 서명 키가 바뀌어 덮어 설치는 안 됨) |
+| Release 앱 실행 | 확인 (2026-11-14 빌드: 실행 후 약 12초 동안 종료·크래시 없음, 첫 실행 화면 "먼저 차량을 등록해 주세요" 표시). 차량 등록 뒤의 홈 화면은 이 빌드에서 확인하지 않음 |
+| Release의 시승 시연 예약 저장, 저장된 시연 예약 내역 조회 | 이전 제출 빌드에서 확인. 2026-11-14에 다시 빌드한 APK에서는 **미확인** |
 | Release에서 음성 상담, 안전 분류, 서비스센터 비교·시연 접수, 다음 차 추천, Gleo 호출 | **Release에서는 미확인** (Debug 개발자 테스트 및 Gleo ADB 검증만 있음) |
 | 차량 모델 검색 추천 (Debug, 에뮬레이터) | 확인 ("아" 입력 시 추천 표시, 추천 선택 시 입력칸·선택한 차량 반영). 그 밖의 검색어는 단위 테스트로만 확인 |
 | 시승 매장 좌표 길안내 (Debug, 에뮬레이터) | 1곳(서울성동 드라이빙센터)만 확인: 경로 요청 호출과 경로 시작 이벤트. 나머지 9곳과 내비게이션 화면의 목적지 위치는 미확인 |
 | 음성 상담의 마이크 여는 시점·준비음·후속 답변 검사 변경 (Debug, 에뮬레이터) | 일부 확인: 안내 음성이 답으로 인식되지 않음, 안내 종료 후 마이크가 열리는 시간(로그). 짧은 답("반복돼요") 인정은 단위 테스트로만 확인 |
 | 단위 테스트 (`ModelSearchTest` 9개, `AnswerCheckTest` 4개) | 통과 (`:automotive:testDebugUnitTest`) |
-| 차량 모델 검색 추천, 시승 매장 좌표 길안내, 음성 상담 변경 | **Release에서는 미확인** (제출 APK는 이 변경 이전에 빌드했고, 다시 빌드하지 않음) |
+| 차량 모델 검색 추천, 시승 매장 좌표 길안내, 음성 상담 변경 | **Release에서는 미확인** (제출 APK에 포함되어 있지만 Release에서 실행해 보지 않음. APK 안의 `dealers.json`에 좌표 10곳이 들어 있는 것만 확인) |
 | 실제 차량 | 미확인 |
 
 ## Release APK 위치
 
 `apk/MIRAE_H.WITH_release.apk`
 
-이 APK는 `-PhwithDemoRelease=true`로 빌드한 **시연 Release**입니다. 커밋 `1cacd57`에 들어 있는 빌드이며, 그 뒤의 변경(차량 모델 검색 추천, 시승 매장 좌표, 음성 상담 수정)은 들어 있지 않습니다. Release 확인 범위는 위 "검증 상태"를 따르며, 확인하지 않은 기능은 검증 완료로 보지 않습니다. 제출 시점에 이 파일이 저장소에 있는지는 최종 커밋으로 확인해 주세요.
+이 APK는 `-PhwithDemoRelease=true`로 빌드한 **시연 Release**입니다. 2026-11-14에 커밋 `c20a5df`의 소스로 다시 빌드했으며 차량 모델 검색 추천, 시승 매장 좌표, 음성 상담 수정이 들어 있습니다(그 뒤의 커밋은 이 APK 파일과 README만 바꿉니다). Release 확인 범위는 위 "검증 상태"를 따르며, 확인하지 않은 기능은 검증 완료로 보지 않습니다. 제출 시점에 이 파일이 저장소에 있는지는 최종 커밋으로 확인해 주세요.
 
 ## 보안·공개 관련
 
