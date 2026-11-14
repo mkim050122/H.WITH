@@ -11,3 +11,18 @@ local.properties
 .cxx/
 .externalNativeBuild/
 /captures/
+
+# 서명 키·비밀번호 (절대 커밋 금지)
+keystore.properties
+*.p12
+*.pem
+*.pfx
+
+# 개발용 로그·임시 자료 (공개 저장소에 올리지 않음)
+keyboard-error.txt
+voice-*.txt
+*.logcat.txt
+Car.zip
+automotive/src/debug/assets/dealer_coords_temp.json
+
+release-crash-log.txt
