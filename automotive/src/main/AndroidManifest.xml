@@ -1,0 +1,131 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Android Automotive OS -->
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- 주소 → 좌표 실시간 조회(지오코딩)에 필요한 일반 인터넷 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Pleos vehicle information permission -->
+    <uses-permission
+        android:name="pleos.car.permission.CAR_INFO" />
+
+    <!-- Microphone permission for speech recognition -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="pleos.car.permission.STT_SERVICE" />
+
+    <uses-permission android:name="pleos.car.permission.TTS_SERVICE" />
+
+    <!-- 서비스센터 길안내 (NaviHelper requestRoute) -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+    <!-- 내비게이션 화면 표시(requestNavigationScreen) -->
+    <uses-permission android:name="pleos.car.permission.NAVI_CUSTOM_MAP" />
+
+    <!-- 주행 습관(속도·주행거리)으로 다음 차를 추천할 때 -->
+    <uses-permission android:name="pleos.car.permission.CAR_SPEED" />
+    <uses-permission android:name="pleos.car.permission.CAR_MILEAGE" />
+
+    <!-- Speech recognition and TTS service visibility -->
+    <queries>
+
+        <!-- Speech recognition service -->
+        <!-- Speech recognition service -->
+        <intent>
+            <action
+                android:name="android.speech.RecognitionService" />
+        </intent>
+
+        <!-- Text-to-Speech service -->
+        <intent>
+            <action
+                android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+
+        <!-- 지도·내비게이션·웹 브라우저·전화 앱 점검(시승 매장 길안내/지도/공식 페이지/전화) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="google.navigation" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.APP_MAPS" />
+        </intent>
+
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="H.WITH"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AutoResolve">
+
+        <!-- Main AutoResolve screen -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="uiMode|screenSize|smallestScreenSize|screenLayout|orientation"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Gleo AI가 음성 명령으로 호출하는 입구 (assets/schema.json의 함수 이름과 같아야 함) -->
+        <activity
+            android:name=".GleoActionActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+
+            <intent-filter>
+                <action android:name="REPORT_VEHICLE_PROBLEM" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="FIND_SERVICE_CENTER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="RECOMMEND_NEXT_CAR" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Voice consultation screen -->
+        <activity
+            android:name=".VoiceConsultActivity"
+            android:exported="false"
+            android:configChanges="uiMode"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

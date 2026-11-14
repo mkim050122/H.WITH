@@ -1,0 +1,90 @@
+{
+  "packageName": "com.autoresolve",
+  "appDescription": "Vehicle self-diagnosis and service center matching for Hyundai, Kia and Genesis owners.",
+  "version": "1.0",
+  "actionCalls": [
+    {
+      "type": "function",
+      "function": {
+        "name": "REPORT_VEHICLE_PROBLEM",
+        "description": "Records the vehicle problem the driver described, checks its safety level, and returns a preliminary result without opening any screen.",
+        "component": "activity",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "symptom": {
+              "type": "string",
+              "description": "The driver's description of what is wrong with the vehicle, including the details already given in the conversation."
+            },
+            "part": {
+              "type": "string",
+              "enum": [
+                "tire",
+                "brake",
+                "engine",
+                "battery_charging",
+                "air_conditioning",
+                "electrical",
+                "body",
+                "other"
+              ],
+              "description": "The vehicle area involved. Use other when it is unknown."
+            }
+          },
+          "required": [
+            "symptom"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "FIND_SERVICE_CENTER",
+        "description": "Shows service centers for the problem the driver already reported, ordered by distance or by how soon service can start.",
+        "component": "activity",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "part": {
+              "type": "string",
+              "enum": [
+                "tire",
+                "brake",
+                "engine",
+                "battery_charging",
+                "air_conditioning",
+                "electrical",
+                "body",
+                "other"
+              ],
+              "description": "The vehicle area to be repaired."
+            },
+            "sortBy": {
+              "type": "string",
+              "enum": [
+                "nearest",
+                "fastest"
+              ],
+              "description": "Whether to order centers by distance or by earliest service."
+            }
+          },
+          "required": []
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "RECOMMEND_NEXT_CAR",
+        "description": "Opens the next car recommendation based on the driver's registered vehicle record.",
+        "component": "activity",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      }
+    }
+  ]
+}

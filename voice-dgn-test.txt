@@ -1,0 +1,563 @@
+﻿--------- beginning of main
+11-13 22:32:35.485 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:32:35.487 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:32:35.495 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:32:51.335 D/AutoResolveVoice(21044): STT stop() 건너뜀 (상담 중지): 켜진 세션 없음
+11-13 22:32:51.358 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 17: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:32:51.364 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '어떤 문제가 있으세요?…'
+11-13 22:32:51.371 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #23(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 22626ms | 라벨=질문 18·최초 사전 준비
+11-13 22:32:51.374 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:32:51.374 D/AutoResolveVoice(21044): [진단·요청] #23: 라벨=질문 18·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12533750
+11-13 22:32:51.374 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 18 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12533754
+11-13 22:32:51.410 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:32:51.646 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:32:52.006 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:32:52.209 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:32:53.973 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 2603ms (스레드 main)
+11-13 22:32:53.973 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #23(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 25228ms
+11-13 22:32:53.974 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #23: 요청→onReady 2604ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:32:53.977 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 2605ms (안내 말하는 중이었는지: true)
+11-13 22:32:54.681 D/AutoResolveVoice(21044): [마이크 입력] rms=324.1 (이번 세션 최대 324.1, 샘플 1개)
+11-13 22:32:54.809 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:32:54.812 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:32:54.833 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:32:54.836 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:32:55.165 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 353ms (요청 -3442ms, 안내 종료 기준)
+11-13 22:32:55.685 D/AutoResolveVoice(21044): [마이크 입력] rms=68.2 (이번 세션 최대 889.0, 샘플 11개)
+11-13 22:32:56.730 D/AutoResolveVoice(21044): [마이크 입력] rms=2237.0 (이번 세션 최대 3036.8, 샘플 20개)
+11-13 22:32:56.879 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #23: 요청→onStarted 5509ms, onReady→onStarted 2906ms
+11-13 22:32:56.879 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 5509ms, ready 후 2906ms, 직전과 간격 -1ms
+11-13 22:32:56.879 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:32:56.895 D/AutoResolveVoice(21044): [부분결과] 요청 후 5525ms, 글자 3 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 166ms 전
+11-13 22:32:56.897 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 2922ms
+11-13 22:32:57.278 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 5908ms, ready 후 3305ms, 직전과 간격 399ms
+11-13 22:32:57.284 D/AutoResolveVoice(21044): [부분결과] 요청 후 5914ms, 글자 6 | 직전 부분결과 389ms 전, 마지막 EPD 없음, 마지막 큰 소리 161ms 전
+11-13 22:32:57.609 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 6239ms, ready 후 3636ms, 직전과 간격 331ms
+11-13 22:32:57.615 D/AutoResolveVoice(21044): [부분결과] 요청 후 6245ms, 글자 9 | 직전 부분결과 331ms 전, 마지막 EPD 없음, 마지막 큰 소리 91ms 전
+11-13 22:32:57.826 D/AutoResolveVoice(21044): [마이크 입력] rms=904.4 (이번 세션 최대 4308.8, 샘플 31개)
+11-13 22:32:58.009 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #4: 요청 후 6639ms, ready 후 4036ms, 직전과 간격 400ms
+11-13 22:32:58.022 D/AutoResolveVoice(21044): [부분결과] 요청 후 6652ms, 글자 13 | 직전 부분결과 407ms 전, 마지막 EPD 없음, 마지막 큰 소리 93ms 전
+11-13 22:32:58.412 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #5: 요청 후 7040ms, ready 후 4437ms, 직전과 간격 401ms
+11-13 22:32:58.413 D/AutoResolveVoice(21044): [부분결과] 요청 후 7043ms, 글자 14 | 직전 부분결과 391ms 전, 마지막 EPD 없음, 마지막 큰 소리 484ms 전
+11-13 22:32:58.808 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 7434ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:32:58.808 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #23: 요청→종료 7438ms, onReady→종료 4830ms
+11-13 22:32:58.809 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #23(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 30063ms
+11-13 22:32:58.828 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 14글자(413ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 319.3(207ms 전), 최대 4308.8, 마지막 큰 소리 899ms 전, 결과: 부분 5/최종 0
+11-13 22:32:58.831 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=2603ms, ready→첫 인식시작=2906ms | 콜백 수: ready=1, 인식시작=5, EPD=0, 부분결과=5, 최종결과=0 | 마이크 입력: 샘플 39개, 최대 4308.8, 평균 1252.8, ready 전 최대 0.0
+11-13 22:32:58.832 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #23: 종료 신호 후 29ms 만에 도착 (14글자)
+11-13 22:32:58.832 D/AutoResolveVoice(21044): [최종결과] 요청 후 7462ms, 글자 14 | 직전 부분결과 419ms 전, 마지막 EPD 없음, 마지막 큰 소리 903ms 전 ← 종료 신호보다 29ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:32:58.834 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=96000: 요청 후 7464ms
+11-13 22:32:58.836 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 4861ms, 최대 마이크 입력 4308.839781846733, 인식된 글자 14, gate=true
+11-13 22:32:58.836 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 18: 종료 신호 후 1ms 만에 최종 결과 도착 (유예 1200ms 안, 14글자)
+11-13 22:32:58.853 I/AutoResolveVoice(21044): [이어받기 생략] 질문 18(SYMPTOM): 14글자, 위험도=NOTICE, 분류=self_check_available → 추가 대기 없이 바로 처리
+11-13 22:32:58.857 I/AutoResolveVoice(21044): [최종 제출] 질문 18: 14글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:32:58.857 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 1960ms, 안내 종료 → 인식 완료: 4045ms, 글자 14
+11-13 22:32:58.857 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:32:58.927 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 18: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:32:58.937 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '네, 알겠어요. 바람이 아예 안 나오…'
+11-13 22:32:58.938 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #24(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 135ms | 라벨=질문 19·최초 사전 준비
+11-13 22:32:58.939 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:32:58.939 D/AutoResolveVoice(21044): [진단·요청] #24: 라벨=질문 19·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12541318
+11-13 22:32:58.939 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 19 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12541319
+11-13 22:32:58.939 D/AutoResolveVoice(21044): ④ AI 응답 생성: 25ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:32:58.958 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:32:59.085 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:32:59.142 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:32:59.196 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:00.650 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 1712ms (스레드 main)
+11-13 22:33:00.650 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #24(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1847ms
+11-13 22:33:00.652 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #24: 요청→onReady 1713ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:33:00.652 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 1714ms (안내 말하는 중이었는지: true)
+11-13 22:33:01.042 D/AutoResolveVoice(21044): [마이크 입력] rms=108.4 (이번 세션 최대 108.4, 샘플 1개)
+11-13 22:33:02.191 D/AutoResolveVoice(21044): [마이크 입력] rms=335.9 (이번 세션 최대 443.1, 샘플 11개)
+11-13 22:33:03.242 D/AutoResolveVoice(21044): [마이크 입력] rms=1056.3 (이번 세션 최대 1056.3, 샘플 23개)
+11-13 22:33:04.347 D/AutoResolveVoice(21044): [마이크 입력] rms=896.8 (이번 세션 최대 1530.8, 샘플 34개)
+11-13 22:33:04.546 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #24: 요청→onStarted 5608ms, onReady→onStarted 3896ms
+11-13 22:33:04.546 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 5608ms, ready 후 3896ms, 직전과 간격 -1ms
+11-13 22:33:04.546 D/AutoResolveVoice(21044): onStartedRecognition (gate=false)
+11-13 22:33:04.554 D/AutoResolveVoice(21044): [부분결과] 요청 후 5612ms, 글자 3 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 106ms 전
+11-13 22:33:04.555 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (3글자)
+11-13 22:33:04.721 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 5783ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:04.722 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #24: 요청→종료 5783ms, onReady→종료 4069ms
+11-13 22:33:04.723 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #24(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 5919ms
+11-13 22:33:04.724 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 3글자(173ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 851.0(169ms 전), 최대 1530.8, 마지막 큰 소리 170ms 전, 결과: 부분 1/최종 0
+11-13 22:33:04.729 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=1712ms, ready→첫 인식시작=3896ms | 콜백 수: ready=1, 인식시작=1, EPD=0, 부분결과=1, 최종결과=0 | 마이크 입력: 샘플 36개, 최대 1530.8, 평균 555.6, ready 전 최대 0.0
+11-13 22:33:04.730 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #24: 종료 신호 후 11ms 만에 도착 (6글자)
+11-13 22:33:04.731 D/AutoResolveVoice(21044): [최종결과] 요청 후 5792ms, 글자 6 | 직전 부분결과 180ms 전, 마지막 EPD 없음, 마지막 큰 소리 176ms 전 ← 종료 신호보다 11ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:04.739 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=32000 off=96000: 요청 후 5793ms
+11-13 22:33:04.740 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 4087ms, 최대 마이크 입력 1530.8378057455989, 인식된 글자 0, gate=false
+11-13 22:33:04.741 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (6글자)
+11-13 22:33:05.092 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #25(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 373ms | 라벨=질문 19·TTS 안내 중 종료 후 재준비
+11-13 22:33:05.094 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:05.094 D/AutoResolveVoice(21044): [진단·요청] #25: 라벨=질문 19·TTS 안내 중 종료 후 재준비, TTS 재생중=true, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12547472
+11-13 22:33:05.094 I/AutoResolveVoice(21044): [진단·복구 재시작] 질문 19 · 앱 시도 2회째 · 원인=TTS 안내 중 종료 후 재준비 · TTS 재생중=true · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12547474
+11-13 22:33:05.373 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:05.374 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:05.393 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:05.438 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:06.691 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 1599ms (스레드 main)
+11-13 22:33:06.691 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #25(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1972ms
+11-13 22:33:06.691 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #25: 요청→onReady 1599ms (요청 당시 TTS 재생중=true, 지금 TTS 재생중=false)
+11-13 22:33:06.691 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 1599ms (안내 말하는 중이었는지: false)
+11-13 22:33:06.691 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(onReady): 1317ms (요청 -282ms, 안내 종료 기준)
+11-13 22:33:07.112 D/AutoResolveVoice(21044): [마이크 입력] rms=381.3 (이번 세션 최대 381.3, 샘플 1개)
+11-13 22:33:08.134 D/AutoResolveVoice(21044): [마이크 입력] rms=1667.1 (이번 세션 최대 5285.8, 샘플 11개)
+11-13 22:33:08.293 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #25: 요청→onStarted 3201ms, onReady→onStarted 1602ms
+11-13 22:33:08.294 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 3202ms, ready 후 1602ms, 직전과 간격 -1ms
+11-13 22:33:08.297 D/AutoResolveVoice(21044): [부분결과] 요청 후 3205ms, 글자 3 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 94ms 전
+11-13 22:33:08.299 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:33:08.300 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 1609ms
+11-13 22:33:08.689 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 3597ms, ready 후 1998ms, 직전과 간격 396ms
+11-13 22:33:08.694 D/AutoResolveVoice(21044): [부분결과] 요청 후 3602ms, 글자 7 | 직전 부분결과 397ms 전, 마지막 EPD 없음, 마지막 큰 소리 88ms 전
+11-13 22:33:09.095 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 4003ms, ready 후 2404ms, 직전과 간격 406ms
+11-13 22:33:09.105 D/AutoResolveVoice(21044): [부분결과] 요청 후 4013ms, 글자 9 | 직전 부분결과 411ms 전, 마지막 EPD 없음, 마지막 큰 소리 499ms 전
+11-13 22:33:09.292 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 4200ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:09.292 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #25: 요청→종료 4200ms, onReady→종료 2601ms
+11-13 22:33:09.292 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #25(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 4573ms
+11-13 22:33:09.293 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 9글자(187ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 576.2(185ms 전), 최대 5285.8, 마지막 큰 소리 687ms 전, 결과: 부분 3/최종 0
+11-13 22:33:09.294 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=1599ms, ready→첫 인식시작=1602ms | 콜백 수: ready=1, 인식시작=3, EPD=0, 부분결과=3, 최종결과=0 | 마이크 입력: 샘플 21개, 최대 5285.8, 평균 1826.1, ready 전 최대 0.0
+11-13 22:33:09.294 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 2603ms, 최대 마이크 입력 3185.080305796857, 인식된 글자 9, gate=true
+11-13 22:33:09.309 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #25: 종료 신호 후 17ms 만에 도착 (9글자)
+11-13 22:33:09.309 D/AutoResolveVoice(21044): [최종결과] 요청 후 4217ms, 글자 9 | 직전 부분결과 204ms 전, 마지막 EPD 없음, 마지막 큰 소리 703ms 전 ← 종료 신호보다 17ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:09.311 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=64000: 요청 후 4218ms
+11-13 22:33:09.311 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 19: 종료 신호 후 17ms 만에 최종 결과 도착 (유예 1200ms 안, 9글자)
+11-13 22:33:09.333 I/AutoResolveVoice(21044): [이어받기 생략] 질문 19(FOLLOW_UP_1): 9글자, 위험도=NOTICE, 분류=inspect_soon → 추가 대기 없이 바로 처리
+11-13 22:33:09.334 I/AutoResolveVoice(21044): [최종 제출] 질문 19: 9글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:33:09.334 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 1034ms, 안내 종료 → 인식 완료: 3960ms, 글자 9
+11-13 22:33:09.334 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:33:09.339 I/AutoResolveVoice(21044): [답변 검증] 질문 19 · FOLLOW_UP_1 · 유형=CHOICE · 입력 9글자 · 결과=유효 · 이유=긍정/부정 표현
+11-13 22:33:09.457 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 19: 앱 시도 2회 (최초 사전 준비 / TTS 안내 중 종료 후 재준비), SDK request() 실제 호출 2회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:09.459 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '설정을 바꿔도 똑같은가요?…'
+11-13 22:33:09.462 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #26(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 170ms | 라벨=질문 20·최초 사전 준비
+11-13 22:33:09.463 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:09.464 D/AutoResolveVoice(21044): [진단·요청] #26: 라벨=질문 20·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12551842
+11-13 22:33:09.464 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 20 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12551844
+11-13 22:33:09.464 D/AutoResolveVoice(21044): ④ AI 응답 생성: 18ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:33:09.648 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:09.843 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:09.960 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:10.024 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:11.120 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 1657ms (스레드 main)
+11-13 22:33:11.120 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #26(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1828ms
+11-13 22:33:11.121 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #26: 요청→onReady 1659ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:33:11.122 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 1660ms (안내 말하는 중이었는지: true)
+11-13 22:33:11.473 D/AutoResolveVoice(21044): [마이크 입력] rms=53.1 (이번 세션 최대 53.1, 샘플 1개)
+11-13 22:33:12.486 D/AutoResolveVoice(21044): [마이크 입력] rms=69.3 (이번 세션 최대 69.3, 샘플 11개)
+11-13 22:33:13.056 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:13.056 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:13.060 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:13.063 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:13.412 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 353ms (요청 -3594ms, 안내 종료 기준)
+11-13 22:33:13.574 D/AutoResolveVoice(21044): [마이크 입력] rms=71.8 (이번 세션 최대 83.5, 샘플 22개)
+11-13 22:33:14.588 D/AutoResolveVoice(21044): [마이크 입력] rms=476.6 (이번 세션 최대 1735.3, 샘플 32개)
+11-13 22:33:15.131 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 5669ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:15.131 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #26: 요청→종료 5669ms, onReady→종료 4012ms
+11-13 22:33:15.131 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #26(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 5839ms
+11-13 22:33:15.132 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 0글자(없음), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 119.7(157ms 전), 최대 1735.3, 마지막 큰 소리 545ms 전, 결과: 부분 0/최종 0
+11-13 22:33:15.134 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=1657ms, ready→첫 인식시작=-1ms | 콜백 수: ready=1, 인식시작=0, EPD=0, 부분결과=0, 최종결과=0 | 마이크 입력: 샘플 36개, 최대 1735.3, 평균 185.7, ready 전 최대 0.0
+11-13 22:33:15.135 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 4013ms, 최대 마이크 입력 1735.3398417168899, 인식된 글자 0, gate=true
+11-13 22:33:15.141 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #26: 종료 신호 후 10ms 만에 도착 (1글자)
+11-13 22:33:15.141 D/AutoResolveVoice(21044): [최종결과] 요청 후 5679ms, 글자 1 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 554ms 전 ← 종료 신호보다 10ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:15.142 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=64000 off=96000: 요청 후 5680ms
+11-13 22:33:15.144 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 20: 종료 신호 후 9ms 만에 최종 결과 도착 (유예 1200ms 안, 1글자)
+11-13 22:33:15.144 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 4022ms
+11-13 22:33:15.148 I/AutoResolveVoice(21044): [이어받기 생략] 질문 20(FOLLOW_UP_2): 1글자, 위험도=NOTICE, 분류=need_more_info → 추가 대기 없이 바로 처리
+11-13 22:33:15.149 I/AutoResolveVoice(21044): [최종 제출] 질문 20: 1글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:33:15.149 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 5ms, 안내 종료 → 인식 완료: 2093ms, 글자 1
+11-13 22:33:15.149 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:33:15.151 I/AutoResolveVoice(21044): [답변 검증] 질문 20 · FOLLOW_UP_2 · 유형=YES_NO · 입력 1글자 · 결과=유효 · 이유=긍정/부정 표현
+11-13 22:33:15.238 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 20: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:15.242 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '먼저 송풍 세기와 온도 설정을 확인해…'
+11-13 22:33:15.250 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #27(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 119ms | 라벨=질문 21·최초 사전 준비
+11-13 22:33:15.252 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:15.253 D/AutoResolveVoice(21044): [진단·요청] #27: 라벨=질문 21·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12557630
+11-13 22:33:15.253 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 21 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12557633
+11-13 22:33:15.253 D/AutoResolveVoice(21044): ④ AI 응답 생성: 22ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:33:15.335 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:15.442 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:15.631 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:15.656 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:16.455 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 1205ms (스레드 main)
+11-13 22:33:16.455 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #27(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1324ms
+11-13 22:33:16.455 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #27: 요청→onReady 1205ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:33:16.456 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 1206ms (안내 말하는 중이었는지: true)
+11-13 22:33:16.973 D/AutoResolveVoice(21044): [마이크 입력] rms=52.3 (이번 세션 최대 52.3, 샘플 1개)
+11-13 22:33:17.996 D/AutoResolveVoice(21044): [마이크 입력] rms=71.1 (이번 세션 최대 89.1, 샘플 12개)
+11-13 22:33:19.007 D/AutoResolveVoice(21044): [마이크 입력] rms=84.2 (이번 세션 최대 100.1, 샘플 22개)
+11-13 22:33:20.021 D/AutoResolveVoice(21044): [마이크 입력] rms=71.0 (이번 세션 최대 100.1, 샘플 32개)
+11-13 22:33:21.105 D/AutoResolveVoice(21044): [마이크 입력] rms=78.7 (이번 세션 최대 100.1, 샘플 43개)
+11-13 22:33:22.111 D/AutoResolveVoice(21044): [마이크 입력] rms=87.3 (이번 세션 최대 110.3, 샘플 53개)
+11-13 22:33:23.203 D/AutoResolveVoice(21044): [마이크 입력] rms=88.9 (이번 세션 최대 110.3, 샘플 64개)
+11-13 22:33:24.208 D/AutoResolveVoice(21044): [마이크 입력] rms=59.2 (이번 세션 최대 110.3, 샘플 74개)
+11-13 22:33:25.173 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:25.174 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:25.191 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:25.223 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:25.303 D/AutoResolveVoice(21044): [마이크 입력] rms=79.8 (이번 세션 최대 110.3, 샘플 85개)
+11-13 22:33:25.527 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 353ms (요청 -9924ms, 안내 종료 기준)
+11-13 22:33:26.305 D/AutoResolveVoice(21044): [마이크 입력] rms=209.7 (이번 세션 최대 209.7, 샘플 95개)
+11-13 22:33:26.766 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #27: 요청→onStarted 11516ms, onReady→onStarted 10311ms
+11-13 22:33:26.767 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 11517ms, ready 후 10311ms, 직전과 간격 -1ms
+11-13 22:33:26.768 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:33:26.774 D/AutoResolveVoice(21044): [부분결과] 요청 후 11524ms, 글자 1 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 79ms 전
+11-13 22:33:26.775 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 10319ms
+11-13 22:33:27.421 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 12171ms, ready 후 10966ms, 직전과 간격 655ms
+11-13 22:33:27.434 D/AutoResolveVoice(21044): [부분결과] 요청 후 12184ms, 글자 3 | 직전 부분결과 660ms 전, 마지막 EPD 없음, 마지막 큰 소리 517ms 전
+11-13 22:33:27.447 D/AutoResolveVoice(21044): [마이크 입력] rms=99.0 (이번 세션 최대 2293.2, 샘플 104개)
+11-13 22:33:27.691 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 12441ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:27.691 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #27: 요청→종료 12441ms, onReady→종료 11236ms
+11-13 22:33:27.692 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #27(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 12561ms
+11-13 22:33:27.702 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 3글자(260ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 220.6(152ms 전), 최대 2293.2, 마지막 큰 소리 780ms 전, 결과: 부분 2/최종 0
+11-13 22:33:27.705 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=1205ms, ready→첫 인식시작=10311ms | 콜백 수: ready=1, 인식시작=2, EPD=0, 부분결과=2, 최종결과=0 | 마이크 입력: 샘플 106개, 최대 2293.2, 평균 165.8, ready 전 최대 0.0
+11-13 22:33:27.710 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #27: 종료 신호 후 19ms 만에 도착 (3글자)
+11-13 22:33:27.720 D/AutoResolveVoice(21044): [최종결과] 요청 후 12460ms, 글자 3 | 직전 부분결과 276ms 전, 마지막 EPD 없음, 마지막 큰 소리 794ms 전 ← 종료 신호보다 19ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:27.720 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=288000 off=320000: 요청 후 12470ms
+11-13 22:33:27.721 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 11265ms, 최대 마이크 입력 1931.4826109105927, 인식된 글자 3, gate=true
+11-13 22:33:27.721 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 21: 종료 신호 후 0ms 만에 최종 결과 도착 (유예 1200ms 안, 3글자)
+11-13 22:33:27.726 I/AutoResolveVoice(21044): [최종 제출] 질문 21: 3글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:33:27.726 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 951ms, 안내 종료 → 인식 완료: 2552ms, 글자 3
+11-13 22:33:27.726 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:33:27.803 I/AutoResolveVoice(21044): [전송 의사 판정] 질문 21: NO (부정) · 이유=명시적 부정 [부정:아니요] · 입력 3글자
+11-13 22:33:27.803 I/AutoResolveVoice(21044): [전송 차단] 사용자가 전달을 원하지 않아 전송하지 않아요.
+11-13 22:33:27.814 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '알겠어요. 필요하면 정비 안내 버튼으…'
+11-13 22:33:27.815 D/AutoResolveVoice(21044): ④ AI 응답 생성: 13ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:33:27.881 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:28.068 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:28.205 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:28.248 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:30.563 D/AutoResolveVoice(21044): STT stop() 건너뜀 (상담 중지): 켜진 세션 없음
+11-13 22:33:30.590 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 21: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:30.596 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '어떤 문제가 있으세요?…'
+11-13 22:33:30.608 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #28(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 2917ms | 라벨=질문 22·최초 사전 준비
+11-13 22:33:30.610 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:30.610 D/AutoResolveVoice(21044): [진단·요청] #28: 라벨=질문 22·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12572986
+11-13 22:33:30.610 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 22 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12572990
+11-13 22:33:30.645 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:30.815 I/AutoResolveVoice(21044): [재생 소리] 2개 용도=1 종류=1 | 용도=1 종류=1
+11-13 22:33:30.836 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:31.027 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:31.028 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:31.029 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:31.377 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:33.937 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:33.938 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:33.950 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:33.975 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:35.165 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 4557ms (스레드 main)
+11-13 22:33:35.165 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #28(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 7474ms
+11-13 22:33:35.167 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #28: 요청→onReady 4561ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=false)
+11-13 22:33:35.169 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 4566ms (안내 말하는 중이었는지: false)
+11-13 22:33:35.169 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(onReady): 1231ms (요청 -3335ms, 안내 종료 기준)
+11-13 22:33:35.751 D/AutoResolveVoice(21044): [마이크 입력] rms=1193.3 (이번 세션 최대 1193.3, 샘플 1개)
+11-13 22:33:36.913 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 6306ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:36.913 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #28: 요청→종료 6307ms, onReady→종료 1749ms
+11-13 22:33:36.913 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #28(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 9222ms
+11-13 22:33:36.914 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 0글자(없음), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 217.0(171ms 전), 최대 1964.1, 마지막 큰 소리 352ms 전, 결과: 부분 0/최종 0
+11-13 22:33:36.915 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=4557ms, ready→첫 인식시작=-1ms | 콜백 수: ready=1, 인식시작=0, EPD=0, 부분결과=0, 최종결과=0 | 마이크 입력: 샘플 11개, 최대 1964.1, 평균 1071.7, ready 전 최대 0.0
+11-13 22:33:36.916 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 1747ms, 최대 마이크 입력 1964.0536372512845, 인식된 글자 0, gate=true
+11-13 22:33:36.956 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #28: 종료 신호 후 43ms 만에 도착 (0글자)
+11-13 22:33:36.957 D/AutoResolveVoice(21044): [최종결과] 요청 후 6351ms, 글자 0 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 395ms 전 ← 종료 신호보다 43ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:36.962 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=32000: 요청 후 6353ms
+11-13 22:33:38.117 W/AutoResolveVoice(21044): 인식 문제: 들린 말이 없었어요. (최대 마이크 입력 1964.0536372512845)
+11-13 22:33:38.117 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 문제: 들린 말이 없었어요.): 켜진 세션 없음
+11-13 22:33:38.117 W/AutoResolveVoice(21044): retry 1: 들린 말이 없었어요.
+11-13 22:33:38.117 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 22: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:38.123 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '잘 못 들었어요. 한 번 더 말씀해 …'
+11-13 22:33:38.130 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #29(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 1217ms | 라벨=질문 23·인식 오류 후 재시도
+11-13 22:33:38.132 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:38.132 D/AutoResolveVoice(21044): [진단·요청] #29: 라벨=질문 23·인식 오류 후 재시도, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12580508
+11-13 22:33:38.132 I/AutoResolveVoice(21044): [진단·재시도 요청] 질문 23 · 앱 시도 1회째 · 원인=인식 오류 후 재시도 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12580512
+11-13 22:33:38.180 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:38.319 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:38.343 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:38.816 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:41.436 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 3308ms (스레드 main)
+11-13 22:33:41.436 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #29(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 4524ms
+11-13 22:33:41.436 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #29: 요청→onReady 3308ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:33:41.439 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 3312ms (안내 말하는 중이었는지: true)
+11-13 22:33:42.483 D/AutoResolveVoice(21044): [마이크 입력] rms=91.0 (이번 세션 최대 91.0, 샘플 1개)
+11-13 22:33:43.492 D/AutoResolveVoice(21044): [마이크 입력] rms=96.1 (이번 세션 최대 168.5, 샘플 11개)
+11-13 22:33:44.575 D/AutoResolveVoice(21044): [마이크 입력] rms=165.7 (이번 세션 최대 800.3, 샘플 22개)
+11-13 22:33:45.019 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:45.030 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:45.042 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:45.057 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:45.383 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 353ms (요청 -6903ms, 안내 종료 기준)
+11-13 22:33:45.667 D/AutoResolveVoice(21044): [마이크 입력] rms=290.8 (이번 세션 최대 845.7, 샘플 33개)
+11-13 22:33:46.562 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #29: 요청→onStarted 8434ms, onReady→onStarted 5126ms
+11-13 22:33:46.562 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 8434ms, ready 후 5126ms, 직전과 간격 -1ms
+11-13 22:33:46.563 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:33:46.582 D/AutoResolveVoice(21044): [부분결과] 요청 후 8454ms, 글자 1 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 309ms 전
+11-13 22:33:46.583 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 5144ms
+11-13 22:33:46.682 D/AutoResolveVoice(21044): [마이크 입력] rms=951.2 (이번 세션 최대 4308.7, 샘플 42개)
+11-13 22:33:46.834 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 8706ms, ready 후 5398ms, 직전과 간격 272ms
+11-13 22:33:46.847 D/AutoResolveVoice(21044): [부분결과] 요청 후 8719ms, 글자 3 | 직전 부분결과 265ms 전, 마지막 EPD 없음, 마지막 큰 소리 104ms 전
+11-13 22:33:47.238 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 9110ms, ready 후 5802ms, 직전과 간격 404ms
+11-13 22:33:47.240 D/AutoResolveVoice(21044): [부분결과] 요청 후 9112ms, 글자 7 | 직전 부분결과 393ms 전, 마지막 EPD 없음, 마지막 큰 소리 108ms 전
+11-13 22:33:47.737 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #4: 요청 후 9609ms, ready 후 6301ms, 직전과 간격 499ms
+11-13 22:33:47.747 D/AutoResolveVoice(21044): [부분결과] 요청 후 9619ms, 글자 9 | 직전 부분결과 507ms 전, 마지막 EPD 없음, 마지막 큰 소리 503ms 전
+11-13 22:33:47.748 D/AutoResolveVoice(21044): [마이크 입력] rms=84.7 (이번 세션 최대 4308.7, 샘플 52개)
+11-13 22:33:47.972 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 9844ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:47.972 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #29: 요청→종료 9844ms, onReady→종료 6535ms
+11-13 22:33:47.972 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #29(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 11060ms
+11-13 22:33:47.973 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 9글자(225ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 75.5(218ms 전), 최대 4308.7, 마지막 큰 소리 729ms 전, 결과: 부분 4/최종 0
+11-13 22:33:47.974 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=3308ms, ready→첫 인식시작=5126ms | 콜백 수: ready=1, 인식시작=4, EPD=0, 부분결과=4, 최종결과=0 | 마이크 입력: 샘플 53개, 최대 4308.7, 평균 720.4, ready 전 최대 0.0
+11-13 22:33:47.975 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 6536ms, 최대 마이크 입력 2570.497581816602, 인식된 글자 9, gate=true
+11-13 22:33:47.984 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #29: 종료 신호 후 8ms 만에 도착 (9글자)
+11-13 22:33:47.985 D/AutoResolveVoice(21044): [최종결과] 요청 후 9856ms, 글자 9 | 직전 부분결과 232ms 전, 마지막 EPD 없음, 마지막 큰 소리 741ms 전 ← 종료 신호보다 8ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:47.986 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=96000 off=160000: 요청 후 9858ms
+11-13 22:33:47.987 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 23: 종료 신호 후 12ms 만에 최종 결과 도착 (유예 1200ms 안, 9글자)
+11-13 22:33:47.996 I/AutoResolveVoice(21044): [이어받기 생략] 질문 23(SYMPTOM): 9글자, 위험도=NOTICE, 분류=inspect_soon → 추가 대기 없이 바로 처리
+11-13 22:33:47.996 I/AutoResolveVoice(21044): [최종 제출] 질문 23: 9글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:33:47.997 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 1413ms, 안내 종료 → 인식 완료: 2966ms, 글자 9
+11-13 22:33:47.998 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:33:48.140 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 23: 앱 시도 1회 (인식 오류 후 재시도), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:48.148 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '그렇군요. 브레이크가 평소보다 깊게 …'
+11-13 22:33:48.159 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #30(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 188ms | 라벨=질문 24·최초 사전 준비
+11-13 22:33:48.160 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:48.160 D/AutoResolveVoice(21044): [진단·요청] #30: 라벨=질문 24·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12590539
+11-13 22:33:48.163 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 24 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12590541
+11-13 22:33:48.163 D/AutoResolveVoice(21044): ④ AI 응답 생성: 45ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:33:48.294 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:48.689 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:48.778 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:48.810 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:50.122 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 1963ms (스레드 main)
+11-13 22:33:50.122 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #30(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 2151ms
+11-13 22:33:50.122 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #30: 요청→onReady 1963ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:33:50.123 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 1964ms (안내 말하는 중이었는지: true)
+11-13 22:33:50.430 D/AutoResolveVoice(21044): [마이크 입력] rms=318.4 (이번 세션 최대 318.4, 샘플 1개)
+11-13 22:33:51.511 D/AutoResolveVoice(21044): [마이크 입력] rms=275.7 (이번 세션 최대 318.4, 샘플 12개)
+11-13 22:33:52.512 D/AutoResolveVoice(21044): [마이크 입력] rms=280.0 (이번 세션 최대 367.2, 샘플 22개)
+11-13 22:33:53.257 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:33:53.258 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:33:53.270 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:53.273 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:33:53.522 D/AutoResolveVoice(21044): [마이크 입력] rms=117.5 (이번 세션 최대 367.2, 샘플 32개)
+11-13 22:33:53.611 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 353ms (요청 -5099ms, 안내 종료 기준)
+11-13 22:33:54.615 D/AutoResolveVoice(21044): [마이크 입력] rms=121.6 (이번 세션 최대 367.2, 샘플 43개)
+11-13 22:33:55.271 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #30: 요청→onStarted 7111ms, onReady→onStarted 5148ms
+11-13 22:33:55.271 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 7112ms, ready 후 5148ms, 직전과 간격 -1ms
+11-13 22:33:55.272 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:33:55.280 D/AutoResolveVoice(21044): [부분결과] 요청 후 7121ms, 글자 1 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 69ms 전
+11-13 22:33:55.280 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 5157ms
+11-13 22:33:55.624 D/AutoResolveVoice(21044): [마이크 입력] rms=418.4 (이번 세션 최대 3199.6, 샘플 53개)
+11-13 22:33:55.720 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 7559ms, ready 후 5596ms, 직전과 간격 448ms
+11-13 22:33:55.725 D/AutoResolveVoice(21044): [부분결과] 요청 후 7564ms, 글자 2 | 직전 부분결과 443ms 전, 마지막 EPD 없음, 마지막 큰 소리 319ms 전
+11-13 22:33:56.123 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 7964ms, ready 후 6001ms, 직전과 간격 405ms
+11-13 22:33:56.126 D/AutoResolveVoice(21044): [부분결과] 요청 후 7967ms, 글자 3 | 직전 부분결과 403ms 전, 마지막 EPD 없음, 마지막 큰 소리 720ms 전
+11-13 22:33:56.423 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 8264ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:33:56.423 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #30: 요청→종료 8264ms, onReady→종료 6301ms
+11-13 22:33:56.423 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #30(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 8452ms
+11-13 22:33:56.425 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 3글자(298ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 94.3(288ms 전), 최대 3199.6, 마지막 큰 소리 1019ms 전, 결과: 부분 3/최종 0
+11-13 22:33:56.426 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=1963ms, ready→첫 인식시작=5148ms | 콜백 수: ready=1, 인식시작=3, EPD=0, 부분결과=3, 최종결과=0 | 마이크 입력: 샘플 58개, 최대 3199.6, 평균 375.5, ready 전 최대 0.0
+11-13 22:33:56.427 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 6304ms, 최대 마이크 입력 3199.5813802355456, 인식된 글자 3, gate=true
+11-13 22:33:56.447 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #30: 종료 신호 후 24ms 만에 도착 (3글자)
+11-13 22:33:56.447 D/AutoResolveVoice(21044): [최종결과] 요청 후 8288ms, 글자 3 | 직전 부분결과 321ms 전, 마지막 EPD 없음, 마지막 큰 소리 1041ms 전 ← 종료 신호보다 24ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:33:56.447 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=128000 off=160000: 요청 후 8289ms
+11-13 22:33:56.448 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 24: 종료 신호 후 21ms 만에 최종 결과 도착 (유예 1200ms 안, 3글자)
+11-13 22:33:56.455 I/AutoResolveVoice(21044): [이어받기 생략] 질문 24(FOLLOW_UP_1): 3글자, 위험도=NOTICE, 분류=need_more_info → 추가 대기 없이 바로 처리
+11-13 22:33:56.469 I/AutoResolveVoice(21044): [최종 제출] 질문 24: 3글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:33:56.470 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 1190ms, 안내 종료 → 인식 완료: 3212ms, 글자 3
+11-13 22:33:56.473 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:33:56.490 I/AutoResolveVoice(21044): [답변 검증] 질문 24 · FOLLOW_UP_1 · 유형=YES_NO · 입력 3글자 · 결과=유효 · 이유=긍정/부정 표현
+11-13 22:33:56.561 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 24: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:33:56.563 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '지금도 같은 증상인가요?…'
+11-13 22:33:56.565 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #31(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 142ms | 라벨=질문 25·최초 사전 준비
+11-13 22:33:56.567 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:33:56.569 D/AutoResolveVoice(21044): [진단·요청] #31: 라벨=질문 25·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12598945
+11-13 22:33:56.569 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 25 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12598949
+11-13 22:33:56.570 D/AutoResolveVoice(21044): ④ AI 응답 생성: 14ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:33:56.679 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:33:57.046 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:57.049 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:33:57.065 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:00.042 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:34:00.043 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:34:00.047 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:00.050 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:01.437 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 4872ms (스레드 main)
+11-13 22:34:01.437 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #31(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 5014ms
+11-13 22:34:01.438 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #31: 요청→onReady 4872ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=false)
+11-13 22:34:01.439 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 4873ms (안내 말하는 중이었는지: false)
+11-13 22:34:01.439 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(onReady): 1396ms (요청 -3478ms, 안내 종료 기준)
+11-13 22:34:01.820 D/AutoResolveVoice(21044): [마이크 입력] rms=1833.4 (이번 세션 최대 1833.4, 샘플 1개)
+11-13 22:34:02.839 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 6274ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:34:02.839 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #31: 요청→종료 6274ms, onReady→종료 1402ms
+11-13 22:34:02.840 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #31(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 6417ms
+11-13 22:34:02.845 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 0글자(없음), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 81.5(154ms 전), 최대 1833.4, 마지막 큰 소리 674ms 전, 결과: 부분 0/최종 0
+11-13 22:34:02.870 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=4872ms, ready→첫 인식시작=-1ms | 콜백 수: ready=1, 인식시작=0, EPD=0, 부분결과=0, 최종결과=0 | 마이크 입력: 샘플 9개, 최대 1833.4, 평균 624.7, ready 전 최대 0.0
+11-13 22:34:02.870 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #31: 종료 신호 후 31ms 만에 도착 (0글자)
+11-13 22:34:02.870 D/AutoResolveVoice(21044): [최종결과] 요청 후 6305ms, 글자 0 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 699ms 전 ← 종료 신호보다 31ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:34:02.871 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=0: 요청 후 6306ms
+11-13 22:34:02.871 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 1433ms, 최대 마이크 입력 1833.3623826865216, 인식된 글자 0, gate=true
+11-13 22:34:04.078 W/AutoResolveVoice(21044): 인식 문제: 들린 말이 없었어요. (최대 마이크 입력 1833.3623826865216)
+11-13 22:34:04.078 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 문제: 들린 말이 없었어요.): 켜진 세션 없음
+11-13 22:34:04.078 W/AutoResolveVoice(21044): retry 1: 들린 말이 없었어요.
+11-13 22:34:04.079 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 25: 앱 시도 1회 (최초 사전 준비), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:34:04.093 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '잘 못 들었어요. 한 번 더 말씀해 …'
+11-13 22:34:04.095 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #32(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 1256ms | 라벨=질문 26·인식 오류 후 재시도
+11-13 22:34:04.096 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:34:04.097 D/AutoResolveVoice(21044): [진단·요청] #32: 라벨=질문 26·인식 오류 후 재시도, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12606475
+11-13 22:34:04.109 I/AutoResolveVoice(21044): [진단·재시도 요청] 질문 26 · 앱 시도 1회째 · 원인=인식 오류 후 재시도 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12606477
+11-13 22:34:04.190 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:34:04.371 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:04.473 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:04.521 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:07.859 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:34:07.860 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:34:07.862 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:07.996 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:08.140 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 4045ms (스레드 main)
+11-13 22:34:08.141 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #32(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 5302ms
+11-13 22:34:08.141 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #32: 요청→onReady 4046ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=false)
+11-13 22:34:08.142 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 4048ms (안내 말하는 중이었는지: true)
+11-13 22:34:08.212 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(미리 준비됨): 352ms (요청 -3766ms, 안내 종료 기준)
+11-13 22:34:08.583 D/AutoResolveVoice(21044): [마이크 입력] rms=73.7 (이번 세션 최대 73.7, 샘플 1개)
+11-13 22:34:09.353 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #32: 요청→onStarted 5258ms, onReady→onStarted 1213ms
+11-13 22:34:09.353 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 5258ms, ready 후 1213ms, 직전과 간격 -1ms
+11-13 22:34:09.355 D/AutoResolveVoice(21044): [부분결과] 요청 후 5259ms, 글자 1 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 78ms 전
+11-13 22:34:09.355 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:34:09.356 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 1214ms
+11-13 22:34:09.679 D/AutoResolveVoice(21044): [마이크 입력] rms=1698.4 (이번 세션 최대 2493.5, 샘플 12개)
+11-13 22:34:09.763 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 5667ms, ready 후 1620ms, 직전과 간격 407ms
+11-13 22:34:09.764 D/AutoResolveVoice(21044): [부분결과] 요청 후 5669ms, 글자 3 | 직전 부분결과 410ms 전, 마지막 EPD 없음, 마지막 큰 소리 87ms 전
+11-13 22:34:10.162 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 6067ms, ready 후 2022ms, 직전과 간격 402ms
+11-13 22:34:10.170 D/AutoResolveVoice(21044): [부분결과] 요청 후 6075ms, 글자 6 | 직전 부분결과 406ms 전, 마지막 EPD 없음, 마지막 큰 소리 91ms 전
+11-13 22:34:10.562 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #4: 요청 후 6467ms, ready 후 2422ms, 직전과 간격 400ms
+11-13 22:34:10.574 D/AutoResolveVoice(21044): [부분결과] 요청 후 6479ms, 글자 9 | 직전 부분결과 404ms 전, 마지막 EPD 없음, 마지막 큰 소리 293ms 전
+11-13 22:34:10.692 D/AutoResolveVoice(21044): [마이크 입력] rms=105.6 (이번 세션 최대 2493.5, 샘플 22개)
+11-13 22:34:11.159 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 7064ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:34:11.159 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #32: 요청→종료 7064ms, onReady→종료 3019ms
+11-13 22:34:11.159 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #32(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 8320ms
+11-13 22:34:11.160 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 9글자(586ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 85.0(381ms 전), 최대 2493.5, 마지막 큰 소리 879ms 전, 결과: 부분 4/최종 0
+11-13 22:34:11.165 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=4045ms, ready→첫 인식시작=1213ms | 콜백 수: ready=1, 인식시작=4, EPD=0, 부분결과=4, 최종결과=0 | 마이크 입력: 샘플 23개, 최대 2493.5, 평균 949.3, ready 전 최대 0.0
+11-13 22:34:11.171 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #32: 종료 신호 후 11ms 만에 도착 (9글자)
+11-13 22:34:11.171 D/AutoResolveVoice(21044): [최종결과] 요청 후 7076ms, 글자 9 | 직전 부분결과 598ms 전, 마지막 EPD 없음, 마지막 큰 소리 890ms 전 ← 종료 신호보다 11ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:34:11.172 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=64000: 요청 후 7077ms
+11-13 22:34:11.175 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 3032ms, 최대 마이크 입력 2188.907211372835, 인식된 글자 9, gate=true
+11-13 22:34:11.176 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 26: 종료 신호 후 2ms 만에 최종 결과 도착 (유예 1200ms 안, 9글자)
+11-13 22:34:11.198 I/AutoResolveVoice(21044): [이어받기 생략] 질문 26(FOLLOW_UP_2): 9글자, 위험도=NOTICE, 분류=inspect_soon → 추가 대기 없이 바로 처리
+11-13 22:34:11.199 I/AutoResolveVoice(21044): [최종 제출] 질문 26: 9글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:34:11.199 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 1843ms, 안내 종료 → 인식 완료: 3339ms, 글자 9
+11-13 22:34:11.199 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:34:11.206 I/AutoResolveVoice(21044): [답변 검증] 질문 26 · FOLLOW_UP_2 · 유형=YES_NO · 입력 9글자 · 결과=유효 · 이유=증상·상태 단어 '어제'
+11-13 22:34:11.309 I/AutoResolveVoice(21044): [진단·질문별 요청 요약] 질문 26: 앱 시도 1회 (인식 오류 후 재시도), SDK request() 실제 호출 1회 (MIN_RESTART_GAP로 미뤄진 요청은 이 시점에 빠졌을 수 있어요)
+11-13 22:34:11.318 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '브레이크는 안전과 관련돼서 원인은 점…'
+11-13 22:34:11.322 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #33(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 163ms | 라벨=질문 27·최초 사전 준비
+11-13 22:34:11.337 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:34:11.337 D/AutoResolveVoice(21044): [진단·요청] #33: 라벨=질문 27·최초 사전 준비, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12613701
+11-13 22:34:11.338 I/AutoResolveVoice(21044): [진단·최초 요청] 질문 27 · 앱 시도 1회째 · 원인=최초 사전 준비 · TTS 재생중=false · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12613717
+11-13 22:34:11.338 D/AutoResolveVoice(21044): ④ AI 응답 생성: 47ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:34:11.415 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:34:11.616 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:11.905 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:11.941 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:12.166 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 845ms (스레드 main)
+11-13 22:34:12.167 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #33(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1008ms
+11-13 22:34:12.167 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #33: 요청→onReady 846ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=true)
+11-13 22:34:12.186 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 865ms (안내 말하는 중이었는지: true)
+11-13 22:34:12.852 D/AutoResolveVoice(21044): [마이크 입력] rms=61.2 (이번 세션 최대 61.2, 샘플 1개)
+11-13 22:34:13.853 D/AutoResolveVoice(21044): [마이크 입력] rms=2087.4 (이번 세션 최대 2197.8, 샘플 11개)
+11-13 22:34:14.139 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #33: 요청→onStarted 2818ms, onReady→onStarted 1973ms
+11-13 22:34:14.140 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 2819ms, ready 후 1973ms, 직전과 간격 -1ms
+11-13 22:34:14.140 D/AutoResolveVoice(21044): onStartedRecognition (gate=false)
+11-13 22:34:14.143 D/AutoResolveVoice(21044): [부분결과] 요청 후 2821ms, 글자 2 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 99ms 전
+11-13 22:34:14.143 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (2글자)
+11-13 22:34:14.654 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 3333ms, ready 후 2488ms, 직전과 간격 515ms
+11-13 22:34:14.657 D/AutoResolveVoice(21044): [부분결과] 요청 후 3336ms, 글자 6 | 직전 부분결과 515ms 전, 마지막 EPD 없음, 마지막 큰 소리 313ms 전
+11-13 22:34:14.658 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (6글자)
+11-13 22:34:14.859 D/AutoResolveVoice(21044): [마이크 입력] rms=1699.0 (이번 세션 최대 7216.6, 샘플 21개)
+11-13 22:34:15.070 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #3: 요청 후 3747ms, ready 후 2902ms, 직전과 간격 414ms
+11-13 22:34:15.086 D/AutoResolveVoice(21044): [부분결과] 요청 후 3764ms, 글자 12 | 직전 부분결과 428ms 전, 마지막 EPD 없음, 마지막 큰 소리 227ms 전
+11-13 22:34:15.089 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (12글자)
+11-13 22:34:15.427 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #4: 요청 후 4106ms, ready 후 3261ms, 직전과 간격 359ms
+11-13 22:34:15.443 D/AutoResolveVoice(21044): [부분결과] 요청 후 4122ms, 글자 16 | 직전 부분결과 359ms 전, 마지막 EPD 없음, 마지막 큰 소리 353ms 전
+11-13 22:34:15.454 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (16글자)
+11-13 22:34:15.688 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 4367ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:34:15.688 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #33: 요청→종료 4368ms, onReady→종료 3522ms
+11-13 22:34:15.689 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #33(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 4530ms
+11-13 22:34:15.690 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 16글자(246ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 816.2(236ms 전), 최대 7216.6, 마지막 큰 소리 600ms 전, 결과: 부분 4/최종 0
+11-13 22:34:15.690 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=845ms, ready→첫 인식시작=1973ms | 콜백 수: ready=1, 인식시작=4, EPD=0, 부분결과=4, 최종결과=0 | 마이크 입력: 샘플 26개, 최대 7216.6, 평균 1476.1, ready 전 최대 0.0
+11-13 22:34:15.691 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 3505ms, 최대 마이크 입력 7216.565901062291, 인식된 글자 0, gate=false
+11-13 22:34:15.707 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #33: 종료 신호 후 18ms 만에 도착 (17글자)
+11-13 22:34:15.708 D/AutoResolveVoice(21044): [최종결과] 요청 후 4387ms, 글자 17 | 직전 부분결과 264ms 전, 마지막 EPD 없음, 마지막 큰 소리 618ms 전 ← 종료 신호보다 18ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:34:15.714 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=64000: 요청 후 4388ms
+11-13 22:34:15.716 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (17글자)
+11-13 22:34:16.044 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #34(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 356ms | 라벨=질문 27·TTS 안내 중 종료 후 재준비
+11-13 22:34:16.046 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:34:16.047 D/AutoResolveVoice(21044): [진단·요청] #34: 라벨=질문 27·TTS 안내 중 종료 후 재준비, TTS 재생중=true, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12618424
+11-13 22:34:16.047 I/AutoResolveVoice(21044): [진단·복구 재시작] 질문 27 · 앱 시도 2회째 · 원인=TTS 안내 중 종료 후 재준비 · TTS 재생중=true · gateOpen=false · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12618427
+11-13 22:34:18.968 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 2924ms (스레드 main)
+11-13 22:34:18.988 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #34(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 3280ms
+11-13 22:34:18.988 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #34: 요청→onReady 2944ms (요청 당시 TTS 재생중=true, 지금 TTS 재생중=true)
+11-13 22:34:18.989 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 2945ms (안내 말하는 중이었는지: true)
+11-13 22:34:19.400 D/AutoResolveVoice(21044): [마이크 입력] rms=564.8 (이번 세션 최대 564.8, 샘플 1개)
+11-13 22:34:20.402 D/AutoResolveVoice(21044): [마이크 입력] rms=149.2 (이번 세션 최대 1559.8, 샘플 11개)
+11-13 22:34:21.497 D/AutoResolveVoice(21044): [마이크 입력] rms=1873.1 (이번 세션 최대 3333.2, 샘플 22개)
+11-13 22:34:22.506 D/AutoResolveVoice(21044): [마이크 입력] rms=986.1 (이번 세션 최대 3333.2, 샘플 32개)
+11-13 22:34:23.538 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 7495ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:34:23.539 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #34: 요청→종료 7495ms, onReady→종료 4572ms
+11-13 22:34:23.539 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #34(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 7851ms
+11-13 22:34:23.539 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 0글자(없음), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 946.1(136ms 전), 최대 4102.3, 마지막 큰 소리 136ms 전, 결과: 부분 0/최종 0
+11-13 22:34:23.540 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=2923ms, ready→첫 인식시작=-1ms | 콜백 수: ready=1, 인식시작=0, EPD=0, 부분결과=0, 최종결과=0 | 마이크 입력: 샘플 41개, 최대 4102.3, 평균 1467.5, ready 전 최대 0.0
+11-13 22:34:23.540 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 4551ms, 최대 마이크 입력 3967.6507566663427, 인식된 글자 0, gate=false
+11-13 22:34:23.550 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #34: 종료 신호 후 11ms 만에 도착 (0글자)
+11-13 22:34:23.551 D/AutoResolveVoice(21044): [최종결과] 요청 후 7507ms, 글자 0 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 148ms 전 ← 종료 신호보다 11ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:34:23.551 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=96000 off=128000: 요청 후 7507ms
+11-13 22:34:23.551 D/AutoResolveVoice(21044): 안내 중 인식 결과는 버림 (0글자)
+11-13 22:34:24.408 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:34:24.410 D/AutoResolveVoice(21044): TTS 종료
+11-13 22:34:24.431 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:24.433 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:24.762 D/AutoResolveVoice(21044): [진단·세션] request() | 앱 요청순번 #35(SDK 세션 ID 아님) | sttSessionActive 전=false 후=true | 직전 종료·중지 후 1223ms | 라벨=질문 27·TTS 종료 후 openGate 재요청
+11-13 22:34:24.765 D/AutoResolveVoice(21044): [시작요청] request() 보냄
+11-13 22:34:24.765 D/AutoResolveVoice(21044): [진단·요청] #35: 라벨=질문 27·TTS 종료 후 openGate 재요청, TTS 재생중=false, 직전 stop() 후 -1ms, 요청 시각(elapsed)=12627142
+11-13 22:34:24.769 I/AutoResolveVoice(21044): [진단·복구 재시작] 질문 27 · 앱 시도 3회째 · 원인=TTS 종료 후 openGate 재요청 · TTS 재생중=false · gateOpen=true · sttSessionActive(시도 전)=false · 직전 stop() 후 -1ms · 시각=12627146
+11-13 22:34:25.178 D/AutoResolveVoice(21044): [준비] onReady #1: 요청 후 416ms (스레드 main)
+11-13 22:34:25.178 D/AutoResolveVoice(21044): [진단·세션] onReady | 앱 요청순번 #35(SDK 세션 ID 아님) | sttSessionActive 전=true 후=true | 직전 종료·중지 후 1639ms
+11-13 22:34:25.178 D/AutoResolveVoice(21044): [진단·준비] 앱 요청순번 #35: 요청→onReady 416ms (요청 당시 TTS 재생중=false, 지금 TTS 재생중=false)
+11-13 22:34:25.179 D/AutoResolveVoice(21044): ① STT 요청 → onReady: 418ms (안내 말하는 중이었는지: false)
+11-13 22:34:25.179 D/AutoResolveVoice(21044): ★ 안내 종료 → 말할 수 있음(onReady): 769ms (요청 351ms, 안내 종료 기준)
+11-13 22:34:25.490 D/AutoResolveVoice(21044): [마이크 입력] rms=2103.1 (이번 세션 최대 2103.1, 샘플 1개)
+11-13 22:34:26.472 D/AutoResolveVoice(21044): [진단·시작] 앱 요청순번 #35: 요청→onStarted 1710ms, onReady→onStarted 1294ms
+11-13 22:34:26.472 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #1: 요청 후 1711ms, ready 후 1294ms, 직전과 간격 -1ms
+11-13 22:34:26.473 D/AutoResolveVoice(21044): onStartedRecognition (gate=true)
+11-13 22:34:26.474 D/AutoResolveVoice(21044): [부분결과] 요청 후 1712ms, 글자 2 | 직전 부분결과 없음, 마지막 EPD 없음, 마지막 큰 소리 290ms 전
+11-13 22:34:26.474 D/AutoResolveVoice(21044): ② onReady → 음성 감지(onUpdated): 1295ms
+11-13 22:34:26.499 D/AutoResolveVoice(21044): [마이크 입력] rms=969.4 (이번 세션 최대 5421.9, 샘플 11개)
+11-13 22:34:26.887 D/AutoResolveVoice(21044): [인식시작] onStartedRecognition #2: 요청 후 2125ms, ready 후 1709ms, 직전과 간격 415ms
+11-13 22:34:26.896 D/AutoResolveVoice(21044): [부분결과] 요청 후 2134ms, 글자 3 | 직전 부분결과 422ms 전, 마지막 EPD 없음, 마지막 큰 소리 712ms 전
+11-13 22:34:27.049 D/AutoResolveVoice(21044): [종료] onEndedRecognition: 요청 후 2288ms, 종료 주체=SDK(앱은 stop() 안 부름)
+11-13 22:34:27.050 D/AutoResolveVoice(21044): [진단·종료] 앱 요청순번 #35: 요청→종료 2288ms, onReady→종료 1872ms
+11-13 22:34:27.050 D/AutoResolveVoice(21044): [진단·세션] onEndedRecognition | 앱 요청순번 #35(SDK 세션 ID 아님) | sttSessionActive 전=true 후=false | 직전 종료·중지 후 3511ms
+11-13 22:34:27.052 D/AutoResolveVoice(21044): [종료 직전 상태] 마지막 부분결과 3글자(154ms 전), 마지막 EPD on=0 off=0(없음), 마지막 마이크 입력 261.5(154ms 전), 최대 5421.9, 마지막 큰 소리 868ms 전, 결과: 부분 2/최종 0
+11-13 22:34:27.054 D/AutoResolveVoice(21044): [세션 요약] 이유=SDK가 인식을 끝냄 | 요청→ready=416ms, ready→첫 인식시작=1294ms | 콜백 수: ready=1, 인식시작=2, EPD=0, 부분결과=2, 최종결과=0 | 마이크 입력: 샘플 15개, 최대 5421.9, 평균 2130.9, ready 전 최대 0.0
+11-13 22:34:27.054 D/AutoResolveVoice(21044): STT 종료 신호: onReady 후 1875ms, 최대 마이크 입력 5421.862952147998, 인식된 글자 3, gate=true
+11-13 22:34:27.060 D/AutoResolveVoice(21044): [진단·늦은 최종 결과] 앱 요청순번 #35: 종료 신호 후 8ms 만에 도착 (3글자)
+11-13 22:34:27.060 D/AutoResolveVoice(21044): [최종결과] 요청 후 2298ms, 글자 3 | 직전 부분결과 162ms 전, 마지막 EPD 없음, 마지막 큰 소리 876ms 전 ← 종료 신호보다 8ms 늦게 도착 (앞의 [세션 요약]에는 이 결과가 빠져 있어요)
+11-13 22:34:27.062 D/AutoResolveVoice(21044): [음성감지 EPD] #1 on=0 off=32000: 요청 후 2300ms
+11-13 22:34:27.065 I/AutoResolveVoice(21044): [진단·종료 후 최종 결과] 질문 27: 종료 신호 후 11ms 만에 최종 결과 도착 (유예 1200ms 안, 3글자)
+11-13 22:34:27.071 I/AutoResolveVoice(21044): [최종 제출] 질문 27: 3글자, 합친 횟수 0, 이어받기 안 함
+11-13 22:34:27.071 D/AutoResolveVoice(21044): ③ 음성 시작 → 인식 완료: 597ms, 안내 종료 → 인식 완료: 2661ms, 글자 3
+11-13 22:34:27.077 D/AutoResolveVoice(21044): STT stop() 건너뜀 (인식 결과를 받음): 켜진 세션 없음
+11-13 22:34:27.126 I/AutoResolveVoice(21044): [전송 의사 판정] 질문 27: NO (부정) · 이유=명시적 부정 [부정:아니요] · 입력 3글자
+11-13 22:34:27.126 I/AutoResolveVoice(21044): [전송 차단] 사용자가 전달을 원하지 않아 전송하지 않아요.
+11-13 22:34:27.140 D/AutoResolveVoice(21044): [TTS] speak() 호출 (UI만=false, TTS=켜짐, STT=켜짐, TTS엔진=Android, 소리용도=MEDIA | 설정 엔진=Android · 실제 사용 엔진=Pleos · 전환 이유=Android TTS 초기화 실패(-1)): '알겠어요. 필요하면 정비 안내 버튼으…'
+11-13 22:34:27.146 D/AutoResolveVoice(21044): ④ AI 응답 생성: 21ms (앱 안의 규칙 기반 응답이라 외부 AI 호출 없음)
+11-13 22:34:27.255 D/AutoResolveVoice(21044): [TTS] Pleos onStart
+11-13 22:34:27.442 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:27.474 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:27.612 I/AutoResolveVoice(21044): [재생 소리] 1개 용도=1 종류=1
+11-13 22:34:33.706 D/AutoResolveVoice(21044): [TTS] Pleos onDone
+11-13 22:34:33.717 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:33.729 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:45.247 I/AutoResolveVoice(21044): [재생 소리] 0개 
+11-13 22:34:46.394 I/AutoResolveVoice(21044): [최상단 화면] VoiceConsultActivity isTopResumed=false
+11-13 22:34:46.732 I/AutoResolveVoice(21044): [생명주기] VoiceConsultActivity@45723161 onPause (포커스=true, finishing=false)
+11-13 22:34:46.824 I/AutoResolveVoice(21044): [디스플레이] 변경 id=0 상태=ON 회전=0
+11-13 22:34:46.826 I/AutoResolveVoice(21044): [창 포커스 변경] VoiceConsultActivity hasFocus=false
+11-13 22:34:46.843 I/AutoResolveVoice(21044): [창 포커스] VoiceConsultActivity@45723161 hasFocus=false
+11-13 22:34:48.077 D/AutoResolveVoice(21044): ⑤ 전체 음성 상담 시간: 316787ms (대화 22번)
+11-13 22:34:48.077 D/AutoResolveVoice(21044): STT stop() 건너뜀 (상담 중지): 켜진 세션 없음
+11-13 22:34:48.376 I/AutoResolveVoice(21044): [생명주기] VoiceConsultActivity@45723161 onStop (포커스=false, finishing=false)

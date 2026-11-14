@@ -1,0 +1,5 @@
+<resources>
+
+    <!-- 다크 모드: 대화상자·입력창 등 시스템 위젯도 어둡게. 액션바는 쓰지 않는다(화면 상단의 어두운 띠 방지). -->
+    <style name="Theme.AutoResolve" parent="android:Theme.Material.NoActionBar" />
+</resources>

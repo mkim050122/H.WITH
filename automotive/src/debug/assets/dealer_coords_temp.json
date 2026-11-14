@@ -1,0 +1,102 @@
+[
+  {
+    "brand": "Hyundai",
+    "name": "강남대로 지점",
+    "address": "서울특별시 강남구 강남대로 292 현대자동차(주) 강남대로지점 전시장 (06258)",
+    "lat": 37.48938128180573,
+    "lon": 127.03220963287238,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Hyundai",
+    "name": "서초남부 지점",
+    "address": "서울특별시 서초구 반포대로 58 1층 현대자동차 서초남부지점 (06652)",
+    "lat": 37.48578365152012,
+    "lon": 127.01186052229627,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Hyundai",
+    "name": "도곡중앙 대리점",
+    "address": "서울특별시 강남구 언주로 122 (도곡동) (06295)",
+    "lat": 37.487074642426485,
+    "lon": 127.0510123236928,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Hyundai",
+    "name": "서울 대리점",
+    "address": "서울특별시 서초구 매헌로 16 하이브랜드 1층 (06771)",
+    "lat": 37.46347677239931,
+    "lon": 127.03695076543816,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Hyundai",
+    "name": "과천대로 대리점",
+    "address": "경기도 과천시 뒷골1로 2 (과천동) (13814)",
+    "lat": 37.45280581510242,
+    "lon": 127.0017862171794,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Kia",
+    "name": "서울성동 드라이빙센터",
+    "address": "서울특별시 성동구 성수이로26길 61 기아 1층",
+    "lat": 37.54494611838144,
+    "lon": 127.06420441473982,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Kia",
+    "name": "서울강서 플래그십 스토어",
+    "address": "서울특별시 강서구 양천로 542 (등촌동) 기아 강서 플래그십스토어",
+    "lat": 37.55851316978509,
+    "lon": 126.85901248602596,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Kia",
+    "name": "상암 지점",
+    "address": "서울특별시 마포구 월드컵북로 295 (상암동, 상암동 하이마트) 기아(주) 상암지점",
+    "lat": 37.57354532187468,
+    "lon": 126.89796427596072,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Kia",
+    "name": "안양 드라이빙센터",
+    "address": "경기도 안양시 동안구 시민대로 199 (BYC 빌딩 3층)",
+    "lat": 37.3922348099535,
+    "lon": 126.95306737918509,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  },
+  {
+    "brand": "Kia",
+    "name": "수원 드라이빙센터",
+    "address": "경기도 수원시 팔달구 경수대로 464 기아 4층",
+    "lat": 37.26736163212101,
+    "lon": 127.02731573933148,
+    "coordSource": "사용자 제공 지오코딩 결과(서비스명·이용조건 미확인, 2026-11-12) · x=경도,y=위도",
+    "coordinateVerifiedAt": "2026-11-12",
+    "verificationStatus": "UNVERIFIED_TERMS_DEMO_ONLY"
+  }
+]

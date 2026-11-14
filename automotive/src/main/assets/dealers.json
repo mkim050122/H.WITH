@@ -1,0 +1,92 @@
+[
+  {
+    "brand": "Hyundai",
+    "name": "강남대로 지점",
+    "address": "서울특별시 강남구 강남대로 292 현대자동차(주) 강남대로지점 전시장 (06258)",
+    "phone": "02-3461-1990",
+    "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Hyundai",
+    "name": "서초남부 지점",
+    "address": "서울특별시 서초구 반포대로 58 1층 현대자동차 서초남부지점 (06652)",
+    "phone": "02-554-5303",
+    "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Hyundai",
+    "name": "도곡중앙 대리점",
+    "address": "서울특별시 강남구 언주로 122 (도곡동) (06295)",
+    "phone": "02-3463-5200",
+    "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Hyundai",
+    "name": "서울 대리점",
+    "address": "서울특별시 서초구 매헌로 16 하이브랜드 1층 (06771)",
+    "phone": "02-597-7682",
+    "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Hyundai",
+    "name": "과천대로 대리점",
+    "address": "경기도 과천시 뒷골1로 2 (과천동) (13814)",
+    "phone": "02-503-3338",
+    "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Kia",
+    "name": "서울성동 드라이빙센터",
+    "address": "서울특별시 성동구 성수이로26길 61 기아 1층",
+    "phone": "02-466-5421",
+    "source": "https://www.kia.com/kr/experience/branch/test-branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Kia",
+    "name": "서울강서 플래그십 스토어",
+    "address": "서울특별시 강서구 양천로 542 (등촌동) 기아 강서 플래그십스토어",
+    "phone": "02-3661-5542",
+    "source": "https://www.kia.com/kr/experience/branch/test-branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Kia",
+    "name": "상암 지점",
+    "address": "서울특별시 마포구 월드컵북로 295 (상암동, 상암동 하이마트) 기아(주) 상암지점",
+    "phone": "02-312-3754",
+    "source": "https://www.kia.com/kr/experience/branch/test-branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Kia",
+    "name": "안양 드라이빙센터",
+    "address": "경기도 안양시 동안구 시민대로 199 (BYC 빌딩 3층)",
+    "phone": "031-469-5421",
+    "source": "https://www.kia.com/kr/experience/branch/test-branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  },
+  {
+    "brand": "Kia",
+    "name": "수원 드라이빙센터",
+    "address": "경기도 수원시 팔달구 경수대로 464 기아 4층",
+    "phone": "031-214-5421",
+    "source": "https://www.kia.com/kr/experience/branch/test-branch",
+    "verifiedAt": "2026-11-12",
+    "demo": false
+  }
+]

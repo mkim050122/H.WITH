@@ -1,0 +1,5 @@
+<resources>
+
+    <!-- 액션바를 쓰지 않는다. 기존 DarkActionBar 테마는 앱 위에 어두운 제목 띠(액션바)를 그린다. -->
+    <style name="Theme.AutoResolve" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
