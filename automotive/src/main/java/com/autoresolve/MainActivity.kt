@@ -1557,108 +1557,76 @@ class MainActivity : Activity() {
         val modelSearch = addVoiceInput(
             "예: 캐스퍼, 아이오닉 5, GV70"
         )
+        // 목록에서 고른 뒤 다시 그릴 때는 고른 모델명을 입력칸에 채워 둔다. (감시자를 붙이기 전이라 목록은 열리지 않음)
+        if (requestedModel != null) modelSearch.setText(model)
 
-        val resultLabel = addText("", 16f, false, 6)
-
-        val modelScroll = ScrollView(this).apply {
-            background = background(surface, border)
-        }
-
+        // 입력하는 동안에만 입력칸 바로 아래에 추천 목록을 보여 준다. (매칭은 ModelSearch.kt 의 matchModels)
         val modelList = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
+            background = background(surface, border)
+            visibility = View.GONE
         }
 
-        modelScroll.addView(modelList)
-
         container.addView(
-            modelScroll,
-            LinearLayout.LayoutParams(-1, dp(210)).apply {
+            modelList,
+            LinearLayout.LayoutParams(-1, -2).apply {
                 bottomMargin = dp(15)
             }
         )
 
-        fun normalized(value: String): String =
-            value.lowercase()
-                .replace(" ", "")
-                .replace("-", "")
-                .replace("_", "")
-                .replace("아이오닉", "ioniq")
-                .replace("지브이", "gv")
-                .replace("이브이", "ev")
-                .replace("케이", "k")
+        fun suggestionRow(label: String, bold: Boolean, onClick: () -> Unit) {
+            modelList.addView(
+                text(label, 20f, bold).apply {
+                    gravity = Gravity.CENTER_VERTICAL
+                    setPadding(dp(16), 0, dp(10), 0)
+                    isClickable = true
+                    isFocusable = true
+                    setOnClickListener { onClick() }
+                },
+                LinearLayout.LayoutParams(-1, dp(74))
+            )
+        }
 
         fun updateModels(query: String) {
             modelList.removeAllViews()
-            var selectedRow: View? = null
+            modelList.visibility = if (query.isBlank()) View.GONE else View.VISIBLE
+            if (query.isBlank()) return
 
-            val search = normalized(query)
-            val matches = models.filter {
-                normalized(it.name).contains(search)
+            // 키보드가 올라오면 보이는 영역이 좁아져 목록이 가려진다. 입력칸을 맨 위로 올려 목록이 보이게 한다.
+            scrollRef?.let { sc ->
+                sc.post {
+                    val r = android.graphics.Rect()
+                    modelSearch.getDrawingRect(r)
+                    sc.offsetDescendantRectToMyCoords(modelSearch, r)
+                    sc.smoothScrollTo(0, r.top - dp(6))
+                }
             }
 
-            resultLabel.text = "검색 결과 ${matches.size}개"
+            val matches = matchModels(query, models.map { it.name })
 
             if (matches.isEmpty()) {
-                modelList.addView(
-                    text("검색 결과가 없어요.", 19f).apply {
-                        setPadding(dp(16), dp(18), 0, dp(18))
-                    }
-                )
+                suggestionRow("찾는 차량이 없어요 · 직접 입력하기", false) { openKeyboard(modelSearch) }
             }
 
-            matches.forEach { vehicle ->
-                val item = text(
-                    if (vehicle.name == model) {
-                        "✓  ${vehicle.name}"
-                    } else {
-                        vehicle.name
-                    },
-                    20f,
-                    vehicle.name == model
-                ).apply {
-                    gravity = Gravity.CENTER_VERTICAL
-                    setPadding(dp(16), 0, dp(10), 0)
-                    background = background(
-                        if (vehicle.name == model) {
-                            selectedBlue
-                        } else {
-                            surface
-                        }
+            matches.forEach { name ->
+                suggestionRow(if (name == model) "✓  $name" else name, name == model) {
+                    Log.i("AutoResolveRegister", "[모델 선택] $name")
+                    val vehicle = VehicleCatalog.getModel(brand, name) ?: return@suggestionRow
+                    (getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager)
+                        ?.hideSoftInputFromWindow(modelSearch.windowToken, 0)
+
+                    // 화면을 다시 그리면서 입력칸 채우기 · 선택한 차량 갱신 · 목록 닫기가 함께 된다.
+                    showVehicleProfile(
+                        brand,
+                        name,
+                        year,
+                        if (powertrain in vehicle.powertrains) powertrain else vehicle.powertrains.first()
                     )
-                    isClickable = true
-                    isFocusable = true
-
-                    setOnClickListener {
-                        Log.i("AutoResolveRegister", "[모델 선택] ${vehicle.name}")
-                        val nextPowertrain =
-                            if (powertrain in vehicle.powertrains) {
-                                powertrain
-                            } else {
-                                vehicle.powertrains.first()
-                            }
-
-                        showVehicleProfile(
-                            brand,
-                            vehicle.name,
-                            year,
-                            nextPowertrain
-                        )
-                    }
                 }
-
-                modelList.addView(
-                    item,
-                    LinearLayout.LayoutParams(-1, dp(74))
-                )
-                if (vehicle.name == model) selectedRow = item
-            }
-            // 선택한 모델이 목록 맨 위가 아니어도 보이도록 그 위치로 내려 준다
-            val target = selectedRow
-            if (target != null && query.isEmpty()) {
-                modelScroll.post { modelScroll.scrollTo(0, (target.top - dp(74)).coerceAtLeast(0)) }
             }
         }
 
+        // 조합 중인 한글(아직 확정되지 않은 글자)도 Editable 에 들어 있어서 글자를 칠 때마다 불린다.
         modelSearch.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(
@@ -1682,8 +1650,6 @@ class MainActivity : Activity() {
                 ) {}
             }
         )
-
-        updateModels("")
 
         addDropdown(
             "연식",

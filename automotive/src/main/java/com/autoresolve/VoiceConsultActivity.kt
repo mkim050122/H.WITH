@@ -50,25 +50,19 @@ class VoiceConsultActivity : Activity() {
         private const val TAG = VoiceEngines.LOG_TAG
         private const val AUDIO_REQUEST = 4902
 
-        // SDK가 요청 후 준비되기까지 약 5~6초 걸리는 것이 측정됐습니다. 안내를 말하는 동안 미리 요청해서
-        // 이 시간을 겹치게 하고, 그래도 늦으면 이 시간까지 기다립니다.
+        // 마이크는 안내가 끝난 뒤에만 요청합니다(안내 중에 열면 안내 음성이 답으로 인식됨).
+        // 요청→준비는 에뮬레이터 실측 57~583ms(29회)였고, 그보다 늦어지면 이 시간까지 기다립니다.
         private const val READY_TIMEOUT_MS = 15000L
         private const val RECOGNITION_TIMEOUT_MS = 20000L
         private const val FINAL_RESULT_GRACE_MS = 1200L
-        private const val MAX_PREARM = 1
 
         // STT 요청 이유 (진단 로그용)
-        private const val REASON_FIRST = "최초 사전 준비"
-        private const val REASON_REARM = "TTS 안내 중 종료 후 재준비"
-        private const val REASON_GATE = "TTS 종료 후 openGate 재요청"
-        private const val REASON_RETRY = "인식 오류 후 재시도"
+        private const val REASON_GATE = "TTS 종료 후 마이크 열기"
         private const val REASON_CONT = "불완전 발화 이어받기"
-        private const val REASON_PERM = "마이크 권한 허용 후 재요청"
 
-        // 마이크가 열릴 때 "삐" 소리를 낼지. 이 소리가 마이크로 다시 들어가 인식을 방해하는지
-        // 확인하려고 지금은 꺼 둡니다. 인식이 잘 되면 true로 바꾸세요.
         private const val UI_SETTLE_MS = 400L
-        private const val READY_BEEP = false
+        // 마이크가 실제로 열리면 "삐" 소리를 냅니다. 화면 안내("삐 소리가 난 뒤에 말씀하세요")와 짝입니다.
+        private const val READY_BEEP = true
         private const val TTS_TIMEOUT_MS = 30000L
         private const val MAX_RETRY = 2
 
@@ -148,7 +142,6 @@ class VoiceConsultActivity : Activity() {
     private var questionRequests = 0
     private val questionReasons = ArrayList<String>()
     private var questionStartSdk = 0
-    private var retryArm = false
     private var endedLocalAt = 0L
     // 마지막으로 처리한 인식 결과가 "최종 결과"였는지. 부분 결과만으로는 전송 동의를 확정하지 않습니다.
     private var lastDeliveredFinal = true
@@ -157,6 +150,7 @@ class VoiceConsultActivity : Activity() {
     private var clarifyCount = 0              // 같은 질문에서 "답변 내용이 불명확해서" 다시 물은 횟수
     private var unconfirmedAnswers = 0        // 두 번째에도 확인하지 못한 답변 수
     private var pendingNote = ""              // 다음 AI 응답 앞에 붙일 안내 (답변을 확인하지 못함)
+    private var liveNote: String? = null      // 다음 안내를 말하는 동안 화면에 남겨 둘 문구 (무효 처리한 답을 뭐라고 들었는지)
     private var voiceConsent = false          // 서비스센터 전송에 대한 명확한 음성 동의가 있었는지
 
     // 이어받기 진단 기록 (세션별 시간과 최종 요약용)
@@ -191,7 +185,6 @@ class VoiceConsultActivity : Activity() {
     private var staleDropped = 0
     private var triagePart: PartCategory? = null   // 위험 증상으로 확인된 부위. 접수에만 쓰입니다.
     private var safetyDetail: String? = null
-    private var armCount = 0
     private var pendingSend = false
     private var prematureLogged = false
 
@@ -401,7 +394,8 @@ class VoiceConsultActivity : Activity() {
                 return
             }
 
-            // 안내를 말하는 동안 들어온 소리는 안내 자신의 소리일 수 있어서 버립니다.
+            // 마이크는 안내가 끝난 뒤에만 열리므로 정상 흐름에서는 여기 오지 않습니다.
+            // 그래도 게이트가 열리기 전의 결과는 어떤 경우에도 답으로 쓰지 않습니다.
             if (!gateOpen) {
                 Log.d(TAG, "안내 중 인식 결과는 버림 (${text.trim().length}글자)")
                 return
@@ -484,16 +478,8 @@ class VoiceConsultActivity : Activity() {
             sessionReady = false
             endedLocalAt = now
 
-            // 안내를 말하는 중에 인식 세션이 끝난 경우: 안내가 끝날 때까지 다시 준비해 둡니다.
-            if (!gateOpen) {
-                if (speechPending && armCount < MAX_PREARM) {
-                    armCount++
-                    handler.postDelayed({
-                        if (!closed && speechPending && !gateOpen) armStt(REASON_REARM)
-                    }, 350L)
-                }
-                return
-            }
+            // 듣는 중이 아닐 때 온 종료 신호는 무시합니다. 마이크는 openGate()에서 새로 엽니다.
+            if (!gateOpen) return
 
             if (resultSubmitted || (!listening && !waitingFinal)) return
 
@@ -531,13 +517,7 @@ class VoiceConsultActivity : Activity() {
             sessionReady = false
 
             if (!gateOpen) {
-                Log.w(TAG, "안내 중 인식 오류: $reason")
-                if (speechPending && armCount < MAX_PREARM) {
-                    armCount++
-                    handler.postDelayed({
-                        if (!closed && speechPending && !gateOpen) armStt(REASON_REARM)
-                    }, 350L)
-                }
+                Log.w(TAG, "듣는 중이 아닐 때 온 인식 오류(무시): $reason")
                 return
             }
 
@@ -1129,9 +1109,6 @@ class VoiceConsultActivity : Activity() {
         questionRequests = 0
         questionReasons.clear()
         questionStartSdk = VoiceEngines.sdkRequestCount
-        val armReason = if (retryArm) REASON_RETRY else REASON_FIRST
-        retryArm = false
-
         // 새 질문이 시작되면 이전 질문의 이어받기는 끝냅니다. (다른 질문의 답이 섞이지 않게)
         questionId++
         voiceConsent = false
@@ -1145,15 +1122,17 @@ class VoiceConsultActivity : Activity() {
         latestPartial = ""
         micOpened = false
         prematureLogged = false
-        armCount = 0
 
         setState("AI가 말하는 중", navy, "AI가 말하는 중")
-        liveView.text = "말이 끝나면 '삐' 소리가 나요. 그때 말씀하세요."
+        liveView.text = liveNote ?: "안내가 끝나고 '삐' 소리가 나면 말씀하세요."
+        liveNote = null
 
         VoiceEngines.speak(message)
 
-        // 안내를 말하는 동안 마이크를 미리 준비합니다. (준비에 몇 초 걸려서, 말과 겹치게 해 대기를 줄임)
-        armStt(armReason)
+        // 안내를 말하는 동안에는 마이크를 열지 않습니다. 미리 열어 두면 그 세션이 스피커로 나온
+        // 안내 음성을 그대로 받아 적어서, 안내가 끝난 직후 사용자의 답으로 들어옵니다(자기 목소리에 답하는 문제).
+        // 마이크는 안내가 끝난 뒤 openGate()에서 엽니다.
+        stopRecognition("안내 중에는 마이크를 열지 않음")
 
         val task = Runnable {
             if (speechPending) {
@@ -1190,7 +1169,7 @@ class VoiceConsultActivity : Activity() {
         handler.postDelayed(task, 8000L)
     }
 
-    // 마이크 세션을 미리 요청합니다. 켜져 있는 세션이 있으면 먼저 닫고 새로 엽니다.
+    // 마이크 세션을 요청합니다. 켜져 있는 세션이 있으면 먼저 닫고 새로 엽니다. (안내 중에는 부르지 않습니다)
     private fun armStt(reason: String): Boolean {
         if (closed || isFinishing || isDestroyed) {
             Log.w(TAG, "[STT 요청 건너뜀] 화면이 닫히는 중이라 마이크를 켜지 않아요.")
@@ -1235,12 +1214,7 @@ class VoiceConsultActivity : Activity() {
         if (ok) {
             questionRequests++
             questionReasons.add(reason)
-            val tag = when (reason) {
-                REASON_FIRST -> "최초 요청"
-                REASON_RETRY -> "재시도 요청"
-                REASON_CONT -> "이어받기 요청"
-                else -> "복구 재시작"
-            }
+            val tag = if (reason == REASON_CONT) "이어받기 요청" else "마이크 요청"
             // 이 줄은 '앱이 요청을 시도했다'는 기록입니다. SDK request()가 실제로 나갔는지는 [진단·SDK 요청]/[진단·세션]을 보세요.
             Log.i(
                 TAG,
@@ -1272,7 +1246,6 @@ class VoiceConsultActivity : Activity() {
 
         val ok = when {
             VoiceEngines.sttSessionActive -> true
-            // 안내 중에 세션이 끝났거나 아직 요청하지 못한 경우
             else -> armStt(REASON_GATE)
         }
 
@@ -1288,8 +1261,9 @@ class VoiceConsultActivity : Activity() {
         if (sessionReady) {
             markMicOpen("미리 준비됨")
         } else {
-            setState("마이크 연결 중...", listeningBlue, "연결 중...")
-            liveView.text = "마이크가 준비되면 '삐' 소리가 나요."
+            // 이 사이에 말하면 앞부분이 잘립니다. 기다려 달라고 분명히 알립니다.
+            setState("잠시만요 · 마이크 연결 중", listeningBlue, "잠시만요")
+            liveView.text = "아직 말씀하지 마세요. '삐' 소리가 난 뒤에 말씀해 주세요."
 
             val readyTask = Runnable {
                 if (listening && gateOpen && !sessionReady && !resultSubmitted) {
@@ -1319,7 +1293,7 @@ class VoiceConsultActivity : Activity() {
 
         if (READY_BEEP) beep(ToneGenerator.TONE_PROP_BEEP, 140)
         setState("말씀하세요", listeningBlue, "말씀하세요")
-        liveView.text = "안내가 끝난 뒤 ${now - ttsDoneAt}ms 만에 마이크가 열렸어요."
+        liveView.text = "듣고 있어요. 지금 말씀하세요."
 
         val task = Runnable {
             if ((listening || waitingFinal) && !resultSubmitted) {
@@ -1357,7 +1331,7 @@ class VoiceConsultActivity : Activity() {
 
         if (requestCode == AUDIO_REQUEST) {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
-                armStt(REASON_PERM)
+                // 안내를 말하는 중이면 열지 않습니다. 안내가 끝나면 openGate()가 엽니다.
                 if (gateOpen) openGate()
             } else {
                 recognitionFailed("마이크 권한이 필요해요.")
@@ -1733,7 +1707,6 @@ class VoiceConsultActivity : Activity() {
 
         if (autoMode && !finished && retryCount < MAX_RETRY) {
             retryCount++
-            retryArm = true
             Log.w(TAG, "retry $retryCount: $reason")
 
             speakAndThenListen(
@@ -1817,18 +1790,17 @@ class VoiceConsultActivity : Activity() {
         }
     }
 
-    // TODO(다음 작업) 음성 개선 후보 두 가지 (이번 UI 작업에서는 수정하지 않음)
-    //  1) "창문이 잘 안 내려가"가 gate=false(안내 중)에 들어와 버려진 사례: 안내가 끝나기 전에 말한 내용을 임시로 보관했다가
-    //     게이트가 열릴 때 처리할지 검토.
-    //  2) 후속 질문 "같은 증상이 반복되나요?"에 대한 "반복해"가 무효 처리된 사례: AnswerCheck의 답변/증상 단어 목록에
-    //     "반복", "자꾸", "매번" 등을 추가할지 검토.
+    // TODO(다음 작업) "창문이 잘 안 내려가"처럼 안내가 끝나기 전에 말한 내용은 지금 버려집니다(안내 중에는 마이크를 열지 않음).
+    //  안내를 끊고 듣는 방식(barge-in)은 에코 제거가 되는 마이크에서만 가능해 보류했습니다.
     // 후속 질문(FOLLOW_UP_1/2)의 답변 내용이 유효한지 검사합니다. true면 정상 진행.
-    // 질문당 재질문은 1회. 두 번째도 무효면 "답변을 확인하지 못함"으로 기록하고 사용자 발화는 대화 기록에 넣지 않습니다.
+    // 질문당 재질문은 1회. 두 번째도 무효면 "답변을 확인하지 못함"으로 기록합니다. 무효 처리한 발화는 답으로 저장하지 않지만,
+    // 뭐라고 들었는지는 화면에 보여 줍니다. (아무것도 못 들은 것처럼 보이지 않게)
     private fun passFollowUpCheck(phrase: String): Boolean {
         if (phase != Phase.FOLLOW_UP_1 && phase != Phase.FOLLOW_UP_2) return true
 
         val (kind, hints) = followUpSpec()
-        val result = AnswerCheck.validateFollowUp(phrase, kind, hints)
+        val question = if (phase == Phase.FOLLOW_UP_1) topic.followUp1 else topic.followUp2
+        val result = AnswerCheck.validateFollowUp(phrase, kind, hints, question)
 
         Log.i(
             TAG,
@@ -1850,13 +1822,14 @@ class VoiceConsultActivity : Activity() {
 
         turns--   // 정상 답변이 아니므로 상담 횟수에 넣지 않음
 
-        val question = if (phase == Phase.FOLLOW_UP_1) topic.followUp1 else topic.followUp2
+        val heard = "'${phrase.trim()}'로 들었어요."
 
         if (clarifyCount < 1) {
             clarifyCount++
             Log.w(TAG, "[답변 재질문] 질문 $questionId · 재질문 ${clarifyCount}/1 · ${phase.name} (STT 인식 실패와 별개)")
 
-            liveView.text = "내용을 확인하지 못했어요. 한 번만 더 말씀해 주세요."
+            liveNote = "$heard 한 번만 더 말씀해 주세요."
+            addMessage(false, "$heard 한 번만 더 말씀해 주세요.")
             speakAndThenListen("잘 못 들었어요. $question")
             return false
         }
@@ -1873,7 +1846,7 @@ class VoiceConsultActivity : Activity() {
                     "(누적 ${unconfirmedAnswers}회, 발화는 대화 기록에 넣지 않음)"
         )
 
-        liveView.text = "답변을 확인하지 못했어요."
+        liveNote = "$heard 답변으로 확인하지 못해 다음으로 넘어갈게요."
         pendingNote = "답변을 확인하지 못했어요. 다음으로 넘어갈게요."
         replyTo("")   // 사용자 발화 없이 다음 단계 질문으로
         return false

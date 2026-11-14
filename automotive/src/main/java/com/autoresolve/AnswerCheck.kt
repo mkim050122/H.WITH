@@ -180,7 +180,33 @@ object AnswerCheck {
         return toks.all { it in CUE_WORDS || it in CUE_HELPERS }
     }
 
-    fun validateFollowUp(text: String, kind: Kind, hints: List<String> = emptyList()): Check {
+    // 반복·빈도를 말하는 표현 (포함 검사). "같은 증상이 반복되나요?" 같은 질문의 짧은 답입니다.
+    private val RECURRENCE = listOf("반복", "자꾸", "매번", "맨날", "매일", "생겨", "생기")
+
+    private fun chosung(c: Char): Int = if (c in '가'..'힣') (c - '가') / 588 else -1
+
+    /**
+     * 질문에 나온 말을 받아서 답한 경우, 겹치는 어간(2글자)을 돌려줍니다.
+     * 질문 단어의 첫 글자가 같고 둘째 글자의 초성이 같으면 같은 어간으로 봅니다. 활용으로 모음이 바뀌기 때문입니다.
+     * 예: "반복되나요" ↔ "반복돼요", "보이나요" ↔ "보여요", "같은" ↔ "같아요", "확인하셨나요" ↔ "확인했어".
+     */
+    private fun questionStem(answer: String, question: String): String? {
+        for (q in tokens(question)) {
+            if (q.length < 2) continue
+            for (i in 0 until answer.length - 1) {
+                val second = answer[i + 1]
+                val sameSecond = second == q[1] || (chosung(second) >= 0 && chosung(second) == chosung(q[1]))
+                if (answer[i] == q[0] && sameSecond) return q.take(2)
+            }
+        }
+        return null
+    }
+
+    /**
+     * [question]은 지금 물어본 질문 문장입니다. 주면 질문의 말을 받아 답한 짧은 답("반복돼요")도 인정합니다.
+     * 서비스센터 전송 동의는 여기서 판단하지 않습니다. (judgeConsent 가 따로, 더 엄격하게 봅니다)
+     */
+    fun validateFollowUp(text: String, kind: Kind, hints: List<String> = emptyList(), question: String = ""): Check {
         val t = clean(text)
         val toks = tokens(text)
 
@@ -210,6 +236,15 @@ object AnswerCheck {
 
         val keyword = KEYWORDS.firstOrNull { t.contains(it) }
         if (keyword != null) return Check(true, "증상·상태 단어 '$keyword'")
+
+        val recurrence = RECURRENCE.firstOrNull { t.contains(it) } ?: "또".takeIf { it in toks }
+        if (recurrence != null) return Check(true, "반복·빈도 표현 '$recurrence'")
+
+        // "안 했어", "못 봤어" 같은 짧은 부정 답
+        if (t.length >= 3 && (t.startsWith("안") || t.startsWith("못"))) return Check(true, "짧은 부정 답('$t')")
+
+        val stem = questionStem(t, question)
+        if (stem != null) return Check(true, "질문의 말을 받아 답함 '$stem'")
 
         // 사전에 없는 말: 충분히 길면 자유 서술로 봅니다. 너무 짧으면 확인합니다.
         return when {

@@ -6,6 +6,9 @@
     "phone": "02-3461-1990",
     "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.48938128180573,
+    "lon": 127.03220963287238,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -15,6 +18,9 @@
     "phone": "02-554-5303",
     "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.48578365152012,
+    "lon": 127.01186052229627,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -24,6 +30,9 @@
     "phone": "02-3463-5200",
     "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.487074642426485,
+    "lon": 127.0510123236928,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -33,6 +42,9 @@
     "phone": "02-597-7682",
     "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.46347677239931,
+    "lon": 127.03695076543816,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -42,6 +54,9 @@
     "phone": "02-503-3338",
     "source": "https://www.hyundai.com/kr/ko/e/customer/branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.45280581510242,
+    "lon": 127.0017862171794,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -51,6 +66,9 @@
     "phone": "02-466-5421",
     "source": "https://www.kia.com/kr/experience/branch/test-branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.54494611838144,
+    "lon": 127.06420441473982,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -60,6 +78,9 @@
     "phone": "02-3661-5542",
     "source": "https://www.kia.com/kr/experience/branch/test-branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.55851316978509,
+    "lon": 126.85901248602596,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -69,6 +90,9 @@
     "phone": "02-312-3754",
     "source": "https://www.kia.com/kr/experience/branch/test-branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.57354532187468,
+    "lon": 126.89796427596072,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -78,6 +102,9 @@
     "phone": "031-469-5421",
     "source": "https://www.kia.com/kr/experience/branch/test-branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.3922348099535,
+    "lon": 126.95306737918509,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   },
   {
@@ -87,6 +114,9 @@
     "phone": "031-214-5421",
     "source": "https://www.kia.com/kr/experience/branch/test-branch",
     "verifiedAt": "2026-11-12",
+    "lat": 37.26736163212101,
+    "lon": 127.02731573933148,
+    "coordSource": "프로젝트 담당자 제공 좌표 (2026-11-14)",
     "demo": false
   }
 ]

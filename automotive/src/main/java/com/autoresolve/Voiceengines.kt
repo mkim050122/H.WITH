@@ -55,9 +55,14 @@ object VoiceEngines {
 
     /** 어떤 안내 음성을 쓸지는 진단 옵션(VoiceDiag)에서 읽습니다. 기본은 Android TTS. */
 
-    /** 안내가 끝난 뒤 마이크를 켜기까지 기다리는 시간(ms). Android TTS는 끝 신호가 정확해서 짧게 둡니다. */
-    val listenDelayMs: Long
-        get() = if (usingAndroidTts) 150L else 350L
+    /**
+     * 안내가 끝난 뒤 마이크를 요청하기까지 기다리는 시간(ms). 스피커 잔향이 마이크로 들어오지 않게 두는 여유입니다.
+     * 마이크는 이 시간 + SDK 준비 시간(에뮬레이터 실측 57~583ms) 뒤에 열립니다.
+     * 실측(Pleos Connect 에뮬레이터, 맥북 스피커·마이크): 500ms일 때 안내 종료→마이크 열림 566~1085ms,
+     * 150ms일 때 258~460ms였고 안내 끝소리가 인식된 사례는 없었습니다.
+     * 안내 끝소리가 답으로 인식되면 늘리고, 답 첫마디가 잘리면 줄이세요.
+     */
+    const val listenDelayMs = 150L
 
     interface SttCallbacks {
         fun onReady()
